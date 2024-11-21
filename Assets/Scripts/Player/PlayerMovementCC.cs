@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerMovementCC : BaseMovement
 {
+    #region Variables
+
     [Header("Public Components")]
     public CharacterController characterController;
     public Transform hurtboxTransform;
 
     // Non-serialized
     GameObject rootObj;
+
+    #endregion
 
     void Awake()
     {
