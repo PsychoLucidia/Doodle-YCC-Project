@@ -8,6 +8,7 @@ public class PlayerMovementCC : BaseMovement
     #region Events
 
     public static Action<float> OnPlayerRotationChange; // Called when the player's rotation changes
+    public static Action<float> OnPlayerRawRotationChange;
 
     #endregion    
 
@@ -18,7 +19,8 @@ public class PlayerMovementCC : BaseMovement
     public Transform hurtboxTransform;
 
     [Header("Enums")]
-    [SerializeField] PlayerState _playerState;
+    public PlayerState playerState;
+    public PlayerAttackState playerAttackState;
 
 
     // Non-serialized
@@ -78,9 +80,10 @@ public class PlayerMovementCC : BaseMovement
 
             // Notify any listeners that the player has changed direction
             OnPlayerRotationChange?.Invoke(smoothAngle);
+            OnPlayerRawRotationChange?.Invoke(targetAngle);
 
             // Set the player's state to moving
-            _playerState = PlayerState.Moving;
+            playerState = PlayerState.Moving;
 
             // Move the player
             characterController.Move(entitySpeed * Time.deltaTime * moveDir);
@@ -88,7 +91,7 @@ public class PlayerMovementCC : BaseMovement
         else
         {
             // Set the player's state to idle
-            _playerState = PlayerState.Idle;
+            playerState = PlayerState.Idle;
         }
     }
 }
@@ -96,4 +99,9 @@ public class PlayerMovementCC : BaseMovement
 public enum PlayerState
 {
     Idle, Moving, 
+}
+
+public enum PlayerAttackState
+{
+    None, Attacking,
 }

@@ -113,12 +113,12 @@ TextureImporter:
       name: Gogo_Run_0
       rect:
         serializedVersion: 2
-        x: 4444
+        x: 196
         y: 0
-        width: 1031
+        width: 1025
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Gogo_Run_1
       rect:
         serializedVersion: 2
-        x: 5514
+        x: 1259
         y: 0
         width: 1025
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Gogo_Run_2
       rect:
         serializedVersion: 2
-        x: 6578
+        x: 2368
         y: 0
-        width: 1028
+        width: 929
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Gogo_Run_3
       rect:
         serializedVersion: 2
-        x: 7635
+        x: 3419
         y: 0
-        width: 1031
+        width: 961
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Gogo_Run_4
       rect:
         serializedVersion: 2
-        x: 8737
+        x: 4444
         y: 0
-        width: 974
+        width: 1031
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Gogo_Run_5
       rect:
         serializedVersion: 2
-        x: 9801
+        x: 5514
         y: 0
-        width: 961
+        width: 1025
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: Gogo_Run_6
       rect:
         serializedVersion: 2
-        x: 10827
+        x: 6578
         y: 0
-        width: 1036
+        width: 1028
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: Gogo_Run_7
       rect:
         serializedVersion: 2
-        x: 11902
+        x: 7635
         y: 0
-        width: 1026
+        width: 1031
         height: 1166
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,90 @@ TextureImporter:
       bones: []
       spriteID: 64674fa18ef1f8744a3b0460a30ac36a
       internalID: 1919599160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gogo_Run_8
+      rect:
+        serializedVersion: 2
+        x: 8737
+        y: 0
+        width: 974
+        height: 1166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a29544e12ab4654ea1c84bf838d4924
+      internalID: -248153103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gogo_Run_9
+      rect:
+        serializedVersion: 2
+        x: 9801
+        y: 0
+        width: 961
+        height: 1166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659e7e1d48db78049a528acc1b967316
+      internalID: 1883783246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gogo_Run_10
+      rect:
+        serializedVersion: 2
+        x: 10827
+        y: 0
+        width: 1036
+        height: 1166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a722a1c921698994c93cffa58cf8da39
+      internalID: -591947324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gogo_Run_11
+      rect:
+        serializedVersion: 2
+        x: 11902
+        y: 0
+        width: 1026
+        height: 1166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47eec9d7dc34b364b91da76528cf3dec
+      internalID: 26646836
       vertices: []
       indices: 
       edges: []
@@ -290,12 +374,16 @@ TextureImporter:
     nameFileIdTable:
       Gogo_Run_0: -2036205275
       Gogo_Run_1: 1426460630
+      Gogo_Run_10: -591947324
+      Gogo_Run_11: 26646836
       Gogo_Run_2: 553577121
       Gogo_Run_3: 1326140389
       Gogo_Run_4: -1186626470
       Gogo_Run_5: -313673600
       Gogo_Run_6: 1163192224
       Gogo_Run_7: 1919599160
+      Gogo_Run_8: -248153103
+      Gogo_Run_9: 1883783246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
