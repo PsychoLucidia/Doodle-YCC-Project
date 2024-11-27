@@ -6,6 +6,7 @@ public class PlayerAnimation : BaseAnimation
 {
     [Header("Sub Components")]
     [SerializeField] PlayerMovementCC playerMovementCC;
+    [SerializeField] PlayerAttackHandler playerAttackHandler;
 
     void Update()
     {
@@ -24,20 +25,31 @@ public class PlayerAnimation : BaseAnimation
 
     void ChangeAnimation()
     {
-        switch (playerMovementCC.playerState)
+        if (playerAttackHandler.playerAttackState != PlayerAttackState.Attacking)
         {
-            case PlayerState.Idle:
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoMove"))
-                {
-                    animator.Play("GogoIdle");
-                }
-                break;
-            case PlayerState.Moving:
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoIdle"))
-                {
-                    animator.Play("GogoMove");
-                }
-                break;
+            switch (playerMovementCC.playerState)
+            {
+                case PlayerState.Idle:
+                    if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoMove")) { animator.Play("GogoIdle"); }
+                    break;
+                case PlayerState.Moving:
+                    if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoIdle")) { animator.Play("GogoMove"); }
+                    break;
+            }
         }
+        else
+        {
+            if (!playerAttackHandler.isAttacking)
+            {
+                playerAttackHandler.isAttacking = true;
+                animator.Play("GogoAttack");
+            }
+        }
+    }
+
+    IEnumerator AttackSequence()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerAttackHandler.isAttacking = false;
     }
 }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] PlayerMovementCC playerMovementCC;
+    [SerializeField] PlayerAttackHandler playerAttackHandler;
     
     void Awake()
     {
         playerMovementCC = GetComponent<PlayerMovementCC>();
+        playerAttackHandler = GetComponent<PlayerAttackHandler>();
     }
 
     // Start is called before the first frame update
@@ -21,11 +23,20 @@ public class PlayerInputHandler : MonoBehaviour
     void Update()
     {
         HandleMovement();
+        HandleAttack();
     }
 
     void HandleMovement()
     {
         playerMovementCC.horizontal = Input.GetAxisRaw("Horizontal");
         playerMovementCC.vertical = Input.GetAxisRaw("Vertical");
+    }
+
+    void HandleAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerAttackHandler.PlayerAttack();
+        }
     }
 }

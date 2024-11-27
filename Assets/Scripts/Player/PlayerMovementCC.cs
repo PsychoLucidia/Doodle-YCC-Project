@@ -20,7 +20,6 @@ public class PlayerMovementCC : BaseMovement
 
     [Header("Enums")]
     public PlayerState playerState;
-    public PlayerAttackState playerAttackState;
 
 
     // Non-serialized
@@ -99,9 +98,4 @@ public class PlayerMovementCC : BaseMovement
 public enum PlayerState
 {
     Idle, Moving, 
-}
-
-public enum PlayerAttackState
-{
-    None, Attacking,
 }
