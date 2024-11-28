@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da36b53f0182aba44ba13850de083200
+guid: 1fd69bf4921fa674584f820d1b85513c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 550
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,112 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Gogo_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 0
-        width: 851
-        height: 1310
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56852363f69709b4b9a868bcc067b9ee
-      internalID: -1081983099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gogo_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 1220
-        y: 0
-        width: 867
-        height: 1310
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8db79bc113a95e247a5939ec262db84c
-      internalID: 1297937544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gogo_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 2228
-        y: 0
-        width: 880
-        height: 1310
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57d056e781355f54397f0e6d9f0ffe6a
-      internalID: 1032652919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gogo_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 3260
-        y: 0
-        width: 872
-        height: 1310
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6c8a481d8098134398695fc9ca593cb
-      internalID: -1728088142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gogo_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 4274
-        y: 0
-        width: 912
-        height: 1310
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55759ce0413e6ed45a5a8720745551ea
-      internalID: 1757642643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -224,12 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Gogo_Idle_0: -1081983099
-      Gogo_Idle_1: 1297937544
-      Gogo_Idle_2: 1032652919
-      Gogo_Idle_3: -1728088142
-      Gogo_Idle_4: 1757642643
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
