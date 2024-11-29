@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class BaseAnimation : MonoBehaviour
 {
+    [Header("Base Settings")]
+    [SerializeField] protected bool enableFlip = true;
+
     [Header("Base Components")]
     [SerializeField] protected Animator animator;
     [SerializeField] protected SpriteRenderer spriteRenderer;
@@ -20,13 +23,16 @@ public abstract class BaseAnimation : MonoBehaviour
 
     protected virtual void FlipSprite(float angle)
     {
-        if (angle > 90 && angle <= 180 || angle < -90 && angle >= -180)
+        if (enableFlip)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (angle < 90 && angle >= 0 || angle > -90 && angle <= 0)
-        {
-            spriteRenderer.flipX = false;
+            if (angle > 90 && angle <= 180 || angle < -90 && angle >= -180)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (angle < 90 && angle >= 0 || angle > -90 && angle <= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
     }
 }

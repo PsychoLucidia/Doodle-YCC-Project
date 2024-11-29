@@ -5,5 +5,7 @@ using UnityEngine;
 
 public class PlayerStat : BaseStat
 {
-    
+    [Header("Player EXP")]
+    public int currentExp;
+    public int expToNextLevel;
 }

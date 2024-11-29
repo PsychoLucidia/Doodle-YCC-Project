@@ -14,22 +14,17 @@ public class PlayerMovementCC : BaseMovement
 
     #region Variables
 
-    [Header("Public Components")]
-    public CharacterController characterController;
-    public Transform hurtboxTransform;
-
     [Header("Enums")]
-    public PlayerState playerState;
-
+    public PlayerMoveState playerState;
 
     // Non-serialized
-    GameObject rootObj;
+    GameObject _rootObj;
 
     #endregion
 
     void Awake()
     {
-        rootObj = this.gameObject;
+        _rootObj = this.gameObject;
     }
 
     // Start is called before the first frame update
@@ -44,7 +39,7 @@ public class PlayerMovementCC : BaseMovement
     void Initialization()
     {
         // Find the hurtbox, which is used to detect collisions with enemies and other objects that can harm the player.
-        hurtboxTransform = rootObj.transform.Find("Hurtbox");
+        hurtboxTransform = _rootObj.transform.Find("Hurtbox");
 
         // Get the CharacterController component, which is used to move the player.
         characterController = GetComponent<CharacterController>();
@@ -58,44 +53,34 @@ public class PlayerMovementCC : BaseMovement
 
     /// <summary>
     /// Main logic for moving the player.
+    /// Updates player state and invokes rotation change events.
     /// </summary>
     public override void MoveLogic()
     {
-        // Get the direction of the player's movement
-        Vector3 direction = new Vector3(horizontal, vertical, 0);
+        // Call the base class's MoveLogic method for shared movement logic.
+        base.MoveLogic();
 
-        // If the player is moving
-        if (direction.magnitude > 0.1f)
+        // Check if the player is moving based on movement direction magnitude.
+        if (moveDirection.magnitude > 0.1f)
         {
-            // Calculate the angle that the player should be facing
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            // Smoothly turn the player towards the target angle
-            float smoothAngle = Mathf.SmoothDampAngle(hurtboxTransform.eulerAngles.z, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            hurtboxTransform.rotation = Quaternion.Euler(0f, 0f, smoothAngle);
-
-            // Move the player in the direction they are facing
-            Vector3 moveDir = Quaternion.Euler(0f, 0f, targetAngle) * Vector3.right;
-
-            // Notify any listeners that the player has changed direction
+            // Invoke event for smooth angle rotation change.
             OnPlayerRotationChange?.Invoke(smoothAngle);
+
+            // Invoke event for raw target angle rotation change.
             OnPlayerRawRotationChange?.Invoke(targetAngle);
 
-            // Set the player's state to moving
-            playerState = PlayerState.Moving;
-
-            // Move the player
-            characterController.Move(entitySpeed * Time.deltaTime * moveDir);
+            // Set player state to moving.
+            playerState = PlayerMoveState.Moving;
         }
         else
         {
-            // Set the player's state to idle
-            playerState = PlayerState.Idle;
+            // Set player state to idle if not moving.
+            playerState = PlayerMoveState.Idle;
         }
     }
 }
 
-public enum PlayerState
+public enum PlayerMoveState
 {
     Idle, Moving, 
 }

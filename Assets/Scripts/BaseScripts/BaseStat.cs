@@ -11,6 +11,4 @@ public abstract class BaseStat : MonoBehaviour
     [Header("Level")]
     public int level;
     public int maxLevel;
-    public int currentExp;
-    public int expToNextLevel;
 }

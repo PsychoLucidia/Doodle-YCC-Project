@@ -40,10 +40,10 @@ public class PlayerAnimation : BaseAnimation
         {
             switch (playerMovementCC.playerState)
             {
-                case PlayerState.Idle:
+                case PlayerMoveState.Idle:
                     if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoMove")) { animator.Play("GogoIdle"); }
                     break;
-                case PlayerState.Moving:
+                case PlayerMoveState.Moving:
                     if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoIdle")) { animator.Play("GogoMove"); }
                     break;
             }
@@ -89,10 +89,10 @@ public class PlayerAnimation : BaseAnimation
         {
             switch (playerMovementCC.playerState)
             {
-                case PlayerState.Idle:
+                case PlayerMoveState.Idle:
                     animator.Play("GogoIdle");
                     break;
-                case PlayerState.Moving:
+                case PlayerMoveState.Moving:
                     animator.Play("GogoMove");
                     break;
             }
