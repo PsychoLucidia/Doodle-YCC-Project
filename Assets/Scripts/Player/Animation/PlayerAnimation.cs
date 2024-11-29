@@ -27,15 +27,15 @@ public class PlayerAnimation : BaseAnimation
         PlayerMovementCC.OnPlayerRawRotationChange -= FlipSprite;
     }
 
-        /// <summary>
-        /// Changes the player's animation based on their movement state.
-        /// </summary>
-        /// <remarks>
-        /// If the player is not attacking, the animation is changed based on
-        /// whether the player is moving or not. If the player is attacking,
-        /// the attack sequence is started. If the attack sequence is already
-        /// in progress, the animation state is not changed.
-        /// </remarks>
+    /// <summary>
+    /// Changes the player's animation based on their movement state.
+    /// </summary>
+    /// <remarks>
+    /// If the player is not attacking, the animation is changed based on
+    /// whether the player is moving or not. If the player is attacking,
+    /// the attack sequence is started. If the attack sequence is already
+    /// in progress, the animation state is not changed.
+    /// </remarks>
     void ChangeAnimation()
     {
         if (playerAttackHandler.playerAttackState != PlayerAttackState.Attacking)
