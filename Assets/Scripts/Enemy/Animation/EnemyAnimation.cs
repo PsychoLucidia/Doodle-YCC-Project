@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EnemyAnimation : BaseAnimation
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
+        EnemyMovement.OnEnemyRawRotationChange += FlipSprite;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        EnemyMovement.OnEnemyRawRotationChange -= FlipSprite;
     }
 }

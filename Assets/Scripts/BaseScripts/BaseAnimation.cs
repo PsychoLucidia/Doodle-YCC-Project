@@ -11,15 +11,10 @@ public abstract class BaseAnimation : MonoBehaviour
     [SerializeField] protected Animator animator;
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
-    void OnEnable()
-    {
-        PlayerMovementCC.OnPlayerRawRotationChange += FlipSprite;
-    }
-
-    void OnDisable()
-    {
-        PlayerMovementCC.OnPlayerRawRotationChange -= FlipSprite;
-    }
+    [Header("Animation States")]
+    [SerializeField] protected string idleAnimationName;
+    [SerializeField] protected string moveAnimationName;
+    [SerializeField] protected string attackAnimationName;
 
     protected virtual void FlipSprite(float angle)
     {

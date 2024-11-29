@@ -1753,6 +1753,9 @@ MonoBehaviour:
   enableFlip: 1
   animator: {fileID: 2145950727}
   spriteRenderer: {fileID: 2145950726}
+  idleAnimationName: GogoIdle
+  moveAnimationName: GogoMove
+  attackAnimationName: GogoAttack
   playerMovementCC: {fileID: 908904959}
   playerAttackHandler: {fileID: 908904964}
 --- !u!1001 &4166391863848718275

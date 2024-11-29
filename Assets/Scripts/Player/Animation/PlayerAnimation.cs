@@ -10,6 +10,7 @@ public class PlayerAnimation : BaseAnimation
 
     Coroutine attackSequence;
 
+
     void Update()
     {
         ChangeAnimation();
@@ -26,14 +27,15 @@ public class PlayerAnimation : BaseAnimation
         PlayerMovementCC.OnPlayerRawRotationChange -= FlipSprite;
     }
 
-    /// <summary>
-    /// Changes the player's animation state based on their current state
-    /// </summary>
-    /// <remarks>
-    /// If the player is not attacking, change the animation based on the player's state.
-    /// If the player is attacking, play the attack animation and wait for the animation to end
-    /// to set the player's attack state back to None.
-    /// </remarks>
+        /// <summary>
+        /// Changes the player's animation based on their movement state.
+        /// </summary>
+        /// <remarks>
+        /// If the player is not attacking, the animation is changed based on
+        /// whether the player is moving or not. If the player is attacking,
+        /// the attack sequence is started. If the attack sequence is already
+        /// in progress, the animation state is not changed.
+        /// </remarks>
     void ChangeAnimation()
     {
         if (playerAttackHandler.playerAttackState != PlayerAttackState.Attacking)
@@ -41,10 +43,10 @@ public class PlayerAnimation : BaseAnimation
             switch (playerMovementCC.playerState)
             {
                 case PlayerMoveState.Idle:
-                    if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoMove")) { animator.Play("GogoIdle"); }
+                    MoveAnimationStateChange(idleAnimationName);
                     break;
                 case PlayerMoveState.Moving:
-                    if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoIdle")) { animator.Play("GogoMove"); }
+                    MoveAnimationStateChange(moveAnimationName);
                     break;
             }
         }
@@ -56,6 +58,19 @@ public class PlayerAnimation : BaseAnimation
                 attackSequence = StartCoroutine(AttackSequence());
             }
         }
+    }
+
+        /// <summary>
+        /// Changes the player's animation state to the given state.
+        /// </summary>
+        /// <param name="state">The name of the state to change to.</param>
+        /// <remarks>
+        /// If the player is already in the given state, this method does nothing.
+        /// </remarks>
+    void MoveAnimationStateChange(string state)
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName(state)) { return; }
+        animator.Play(state);
     }
 
     /// <summary>
@@ -76,26 +91,13 @@ public class PlayerAnimation : BaseAnimation
     /// </summary>
     IEnumerator AttackSequence()
     {
-        animator.Play("GogoAttack");
+        animator.Play(attackAnimationName);
 
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("GogoAttack")) { yield return null; }
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(attackAnimationName)) { yield return null; }
         
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         PlayerAttackHandler.isAttacking = false;
         playerAttackHandler.playerAttackState = PlayerAttackState.None;
         attackSequence = null;
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("GogoAttack"))
-        {
-            switch (playerMovementCC.playerState)
-            {
-                case PlayerMoveState.Idle:
-                    animator.Play("GogoIdle");
-                    break;
-                case PlayerMoveState.Moving:
-                    animator.Play("GogoMove");
-                    break;
-            }
-        }
     }
 }

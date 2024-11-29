@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : BaseMovement
 {
+    #region Events
+
+    public static Action<float> OnEnemyRawRotationChange;
+
+    #endregion
 
     #region Variables
 
@@ -44,6 +50,8 @@ public class EnemyMovement : BaseMovement
         if (moveDirection.magnitude > 0.1f)
         {
             enemyMoveState = EnemyMoveState.Moving;
+
+            OnEnemyRawRotationChange?.Invoke(targetAngle);
         }
         else
         {
