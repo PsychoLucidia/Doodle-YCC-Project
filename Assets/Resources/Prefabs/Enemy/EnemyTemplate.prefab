@@ -77,8 +77,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2407823001548497110}
   - component: {fileID: 4166267185554615292}
+  - component: {fileID: 8713845794911975248}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,6 +152,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8713845794911975248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369203697115685530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd289cbd922544b4a99eca8a5a62d76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableFlip: 1
+  animator: {fileID: 4871410062517981956}
+  spriteRenderer: {fileID: 4166267185554615292}
 --- !u!1 &535254441109700284
 GameObject:
   m_ObjectHideFlags: 0
