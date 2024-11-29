@@ -60,13 +60,13 @@ public class PlayerAnimation : BaseAnimation
         }
     }
 
-        /// <summary>
-        /// Changes the player's animation state to the given state.
-        /// </summary>
-        /// <param name="state">The name of the state to change to.</param>
-        /// <remarks>
-        /// If the player is already in the given state, this method does nothing.
-        /// </remarks>
+    /// <summary>
+    /// Changes the player's animation state to the given state.
+    /// </summary>
+    /// <param name="state">The name of the state to change to.</param>
+    /// <remarks>
+    /// If the player is already in the given state, this method does nothing.
+    /// </remarks>
     void MoveAnimationStateChange(string state)
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(state)) { return; }
