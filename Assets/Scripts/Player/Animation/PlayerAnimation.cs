@@ -14,7 +14,6 @@ public class PlayerAnimation : BaseAnimation
     void Update()
     {
         ChangeAnimation();
-        Debug.Log("Attack Animation Length: " + animator.GetCurrentAnimatorStateInfo(0).length);
     }
 
     void OnEnable()

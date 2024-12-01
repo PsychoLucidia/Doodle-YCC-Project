@@ -47,6 +47,11 @@ public class WeaponHitbox : BaseHitbox
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Hit: " + other.gameObject.name);
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(currentAttackDamage);
+        }
     }
 
     IEnumerator AttackSequence()

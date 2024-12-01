@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStat
-  weaponName: 
+  weaponName: Sword
   attackSpeed: 0
-  attackDamage: 0
-  initalDamage: 0
+  attackDamage: 10
+  initalDamage: 10
