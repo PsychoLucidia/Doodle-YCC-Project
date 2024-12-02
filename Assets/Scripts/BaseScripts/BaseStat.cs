@@ -14,4 +14,6 @@ public abstract class BaseStat : MonoBehaviour
     [Header("Level")]
     public int level;
     public int maxLevel;
+
+    public abstract void TakeDamage(int damage);
 }

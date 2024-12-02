@@ -14,8 +14,17 @@ public class PlayerStat : BaseStat
         ClampLife();
     }
 
+    /// <summary>
+    /// Clamps the player's health within the valid range from 0 to maxHealth.
+    /// </summary>
     void ClampLife()
     {
+        // Ensure the health value stays between 0 and maxHealth
         health = Mathf.Clamp(health, 0, maxHealth);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+
     }
 }

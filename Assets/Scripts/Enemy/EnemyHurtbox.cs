@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
 
 public class EnemyHurtbox : BaseHurtbox, IDamageable
@@ -22,7 +21,6 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Enemy took damage");
         if (_damageTextPool == null)
         {
             Debug.Log("DamageTextPool null. referencing");
@@ -33,10 +31,22 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
         {
             _damageTextPool.ActivateObject
                 (new Color32(255, 0, 0, 255), this.transform.parent, Camera.main.WorldToScreenPoint(this.transform.position), damage);
+            _enemyStat.TakeDamage(damage);
         }
         else
         {
             return;
         }
+    }
+
+    protected override int CalculateDamage(int inputDamage)
+    {
+        int initialDamage = inputDamage;
+
+        if (_enemyStat != null)
+        {
+
+        }
+        return inputDamage;
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyStat : BaseStat
 {
+    [Header("EXP Drop")]
     public int xpDrop;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +18,20 @@ public class EnemyStat : BaseStat
     void Update()
     {
         
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+
+        }
+    }
+
+    void Die()
+    {
+
     }
 }

@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     public PauseState pauseState;
 
+    public float playTime;
+    public float totalPlayTime;
+    
+    public int difficultyLevel;
+
     void Awake()
     {
         if (Instance == null)
@@ -17,6 +22,20 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    void Update()
+    {
+        IncrementPlayTime();
+    }
+
+    void IncrementPlayTime()
+    {
+        if (pauseState == PauseState.Unpaused)
+        {
+            playTime += Time.deltaTime;
+            totalPlayTime += Time.deltaTime;
         }
     }
 }
