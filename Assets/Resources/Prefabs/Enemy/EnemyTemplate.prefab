@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8372111328270099735}
   - component: {fileID: 6732732168029820078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,8 +223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
+  speed: 0
+  damage: 0
+  defense: 0
   level: 0
   maxLevel: 0
+  xpDrop: 0
 --- !u!114 &7708551727184344470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +322,7 @@ GameObject:
   - component: {fileID: 6354120706617869970}
   - component: {fileID: 6428567065273981818}
   - component: {fileID: 501179436122995472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,3 +391,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyStat: {fileID: 0}

@@ -12,6 +12,9 @@ public class BaseObjectPool : MonoBehaviour
     [Header("Object Prefab")]
     public GameObject objectPrefab;
 
-    public virtual void ActivateObject() {}
-    public virtual void DeactivateObject() {}
+    public virtual void ActivateObject(Color32 color) {}
+    public virtual void ActivateObject(Color32 color, Transform transform, Vector2 spawnPosition, int damageAmount) {}
+
+
+    public virtual void DeactivateObject(GameObject textObj, GameObject anchorObj) {}
 }
