@@ -14,6 +14,7 @@ public abstract class BaseObjectPool : MonoBehaviour
 
     public virtual void ActivateObject(Color32 color) {}
     public virtual void ActivateObject(Color32 color, Transform transform, Vector2 spawnPosition, int damageAmount) {}
+    public virtual void ActivateObject(int level, int speed, int damage) {}
 
     public virtual void DeactivateObject(GameObject textObj, GameObject anchorObj) {}
 }
