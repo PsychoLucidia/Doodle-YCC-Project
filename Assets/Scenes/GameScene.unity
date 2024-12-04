@@ -3201,6 +3201,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8437287887253249499, guid: b805e1318d634424292e3f8c76630c71, type: 3}
+      propertyPath: projectiles
+      value: 
+      objectReference: {fileID: 8951605092425304126, guid: f70c40e43e277b24b9a53ffb52319cdc, type: 3}
+    - target: {fileID: 8437287887253249499, guid: b805e1318d634424292e3f8c76630c71, type: 3}
+      propertyPath: startTimeOfShots
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
