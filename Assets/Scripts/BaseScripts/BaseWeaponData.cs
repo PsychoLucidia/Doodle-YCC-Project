@@ -25,7 +25,7 @@ public class WeaponStat : ScriptableObject, IWeapon
     public float attackSpeed;
     public int attackDamage;
 
-    public int initalDamage;
+    public int initialDamage;
 
     public void Attack()
     {

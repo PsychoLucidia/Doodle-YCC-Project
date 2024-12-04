@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHitbox : BaseHitbox
+public class WeaponHitbox : BaseHitbox, ICollectEXP
 {
     [SerializeField] PlayerAttackHandler _playerAttackHandler;
     [SerializeField] Animator _weaponAnimator;
+    
 
     Coroutine attackCoroutine;
 

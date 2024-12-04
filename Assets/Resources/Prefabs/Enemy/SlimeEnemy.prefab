@@ -51,6 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 2
+  initialSpeed: 0
+  initialDamage: 1
+  initialDefense: 0
   health: 2
   maxHealth: 2
   speed: 0
@@ -58,6 +62,7 @@ MonoBehaviour:
   defense: 0
   level: 1
   maxLevel: 1
+  xpDrop: 2
 --- !u!114 &2637787023755444315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyStat: {fileID: 0}
 --- !u!1 &7358912737308150008
 GameObject:
   m_ObjectHideFlags: 0

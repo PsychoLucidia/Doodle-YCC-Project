@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public PauseState pauseState;
+    public PlayerStat playerStat;
 
     public float playTime;
     public float totalPlayTime;
@@ -23,6 +24,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Initialization();
+    }
+
+    void Initialization()
+    {
+        playerStat = FindObjectOfType<PlayerStat>();
     }
 
     void Update()

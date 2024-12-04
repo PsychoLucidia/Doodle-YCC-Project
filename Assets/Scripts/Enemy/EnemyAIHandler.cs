@@ -7,7 +7,7 @@ public class EnemyAIHandler : MonoBehaviour
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] Transform playerTransform;
 
-    private float timeOfShots;
+    private float _timeOfShots;
     public float startTimeOfShots;
 
     public GameObject projectiles;
@@ -21,7 +21,7 @@ public class EnemyAIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeOfShots = startTimeOfShots;
+        _timeOfShots = startTimeOfShots;
     }
 
     // Update is called once per frame
@@ -29,13 +29,17 @@ public class EnemyAIHandler : MonoBehaviour
     {
         GetPlayerPosition();
 
-        if (timeOfShots <= 0)
+        if (projectiles != null)
         {
-            Instantiate(projectiles, transform.position, Quaternion.identity);
-            timeOfShots = startTimeOfShots;
-        } else
-        {
-            timeOfShots -= Time.deltaTime;
+            if (_timeOfShots <= 0)
+            {
+                Instantiate(projectiles, transform.position, Quaternion.identity);
+                _timeOfShots = startTimeOfShots;
+            }
+            else
+            {
+                _timeOfShots -= Time.deltaTime;
+            }
         }
     }
 

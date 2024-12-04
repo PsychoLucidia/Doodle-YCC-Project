@@ -903,9 +903,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cede7f2b285841148a4a5bf5f48641c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65ddd14ef6e69504b8f1fdd1d47cebb1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1412,13 +1412,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8860c4706029b4cb39339efcc784c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  initialHealth: 10
+  initialSpeed: 5
+  initialDamage: 0
+  initialDefense: 0
+  health: 0
+  maxHealth: 0
   speed: 0
   damage: 0
   defense: 0
+  additionalDamage: 0
+  additionalHealth: 0
   level: 0
   maxLevel: 0
+  playerAttackHandler: {fileID: 908904964}
+  playerMovementCC: {fileID: 908904959}
   currentExp: 0
   expToNextLevel: 0
 --- !u!114 &908904964
@@ -1435,7 +1443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAttackState: 0
   weaponStat: {fileID: 11400000, guid: c3ae418405b1545459314d851e6b5e8a, type: 2}
-  playerStat: {fileID: 0}
+  playerStat: {fileID: 908904963}
 --- !u!1 &928421478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseState: 0
+  playerStat: {fileID: 0}
   playTime: 0
   totalPlayTime: 0
   difficultyLevel: 1
@@ -2372,7 +2381,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2846,7 +2855,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3200,14 +3209,6 @@ PrefabInstance:
     - target: {fileID: 4347789835475225167, guid: b805e1318d634424292e3f8c76630c71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8437287887253249499, guid: b805e1318d634424292e3f8c76630c71, type: 3}
-      propertyPath: projectiles
-      value: 
-      objectReference: {fileID: 8951605092425304126, guid: f70c40e43e277b24b9a53ffb52319cdc, type: 3}
-    - target: {fileID: 8437287887253249499, guid: b805e1318d634424292e3f8c76630c71, type: 3}
-      propertyPath: startTimeOfShots
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

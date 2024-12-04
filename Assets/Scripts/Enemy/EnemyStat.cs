@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class EnemyStat : BaseStat
     [Header("EXP Drop")]
     public int xpDrop;
 
+    public PlayerStat playerStat;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,11 @@ public class EnemyStat : BaseStat
 
     void Die()
     {
+        
+    }
 
+    void StatCalculation()
+    {
+        
     }
 }

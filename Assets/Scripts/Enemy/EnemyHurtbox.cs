@@ -21,21 +21,40 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
 
     public void TakeDamage(int damage)
     {
+        GetComponents();
+
+        if (_damageTextPool != null)
+        {
+            _damageTextPool.ActivateObject
+                (new Color32(255, 0, 0, 255), this.transform.parent, Camera.main.WorldToScreenPoint(this.transform.position), damage);
+            _enemyStat.TakeDamage(CalculateDamage(damage));
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D actor)
+    {
+        ICollectEXP collectEXP = actor.GetComponent<ICollectEXP>();
+        if (collectEXP != null)
+        {
+            _enemyStat.playerStat = actor.GetComponentInParent<PlayerStat>();
+        }
+    }
+
+    void GetComponents()
+    {
         if (_damageTextPool == null)
         {
             Debug.Log("DamageTextPool null. referencing");
             _damageTextPool = FindObjectOfType<DamageTextPool>();
         }
 
-        if (_damageTextPool != null)
+        if (_enemyStat.playerStat == null)
         {
-            _damageTextPool.ActivateObject
-                (new Color32(255, 0, 0, 255), this.transform.parent, Camera.main.WorldToScreenPoint(this.transform.position), damage);
-            _enemyStat.TakeDamage(damage);
-        }
-        else
-        {
-            return;
+
         }
     }
 

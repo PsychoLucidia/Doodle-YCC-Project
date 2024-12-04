@@ -26,6 +26,11 @@ public class PlayerAttackHandler : MonoBehaviour
 
     #endregion
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         _isAttacking = isAttacking;
@@ -43,7 +48,7 @@ public class PlayerAttackHandler : MonoBehaviour
         if (weaponStat == null) { return 0; }
         
         // Formula is currently working in progress
-        float attackDamage = weaponStat.attackDamage;
+        float attackDamage = playerStat.damage;
 
         return Mathf.RoundToInt(attackDamage);
     }
