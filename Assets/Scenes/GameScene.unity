@@ -175,6 +175,7 @@ MonoBehaviour:
   activeObjects: []
   inactiveObjects: []
   poolSize: 10
+  limitToPoolSize: 0
   objectPrefab: {fileID: 3225160549599848146, guid: d1c3f45c0fdfbcf4890fd217822d0e12, type: 3}
   textParent: {fileID: 464860276}
   anchorParent: {fileID: 744369997}
@@ -292,7 +293,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &370326159
 RectTransform:
@@ -1413,16 +1414,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 10
-  initialSpeed: 5
   initialDamage: 0
   initialDefense: 0
+  initialSpeed: 5
   health: 0
   maxHealth: 0
-  speed: 0
   damage: 0
   defense: 0
+  speed: 0
   additionalDamage: 0
   additionalHealth: 0
+  additionalSpeed: 0
   level: 0
   maxLevel: 0
   playerAttackHandler: {fileID: 908904964}
@@ -2298,10 +2300,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialSpawnCount: 1
   initialInterval: 5
-  spawnOffset: 1
+  spawnOffset: 3
   spawnCount: 0
   spawnInterval: 0
-  spawnTable: {fileID: 0}
+  spawnTable:
+  - spawnIDTable: 00000000
+    tableChangeTime: 0
+  objectPools:
+  - {fileID: 0}
   enemyIDs: 
 --- !u!4 &1593038771
 Transform:
@@ -2574,6 +2580,7 @@ MonoBehaviour:
   activeObjects: []
   inactiveObjects: []
   poolSize: 10
+  limitToPoolSize: 0
   objectPrefab: {fileID: 1268182187811764973, guid: 0d6f3465d562e28468c7be533e591556, type: 3}
 --- !u!1 &2022628381
 GameObject:
@@ -2998,7 +3005,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.283
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3085,7 +3092,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1081983099, guid: da36b53f0182aba44ba13850de083200, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3149,6 +3156,10 @@ PrefabInstance:
     - target: {fileID: 535254441109700284, guid: b805e1318d634424292e3f8c76630c71, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 535254441109700284, guid: b805e1318d634424292e3f8c76630c71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913803800027949433, guid: b805e1318d634424292e3f8c76630c71, type: 3}
       propertyPath: health

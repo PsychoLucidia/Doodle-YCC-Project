@@ -4,31 +4,44 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public int initialSpawnCount = 1;
+    public int initialSpawnCount = 2;
     public float initialInterval = 4f;
     public float spawnOffset = 1f;
 
     [SerializeField] int spawnCount;
     [SerializeField] float spawnInterval;
 
-    public SpawnTable spawnTable;
-    SpawnTable _spawnTable;
+    public SpawnTable[] spawnTable;
+    public BaseObjectPool[] objectPools;
 
     public int[] enemyIDs;
 
     float _timer = 0f;
+
+    PlayerStat playerStat;
+
+    void Awake()
+    {
+        BaseObjectPool[] pools = GetComponentsInChildren<BaseObjectPool>();
+
+        objectPools = pools;
+
+        playerStat = FindObjectOfType<PlayerStat>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         spawnCount = initialSpawnCount;
         spawnInterval = initialInterval;
+
+        SpawnEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SpawnTimer();
     }
 
     void SpawnEnemy()
@@ -39,16 +52,21 @@ public class EnemySpawner : MonoBehaviour
         int randomSides = Random.Range(0, 3);
         Vector3 spawnPos = Vector3.zero;
 
-        switch (randomSides)
+        for (int i = -1; i < spawnCount; i++)
         {
-            case 0: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMax.y + spawnOffset, 0); break; // Top
-            case 1: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMin.y - spawnOffset, 0); break; // Bottom
-            case 2: spawnPos = new Vector3(screenMax.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Left
-            case 3: spawnPos = new Vector3(screenMin.x + spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
-            default: break; // Error
+            enemyIDs = spawnTable[0].spawnIDTable;
+            switch (randomSides)
+            {
+                case 0: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMax.y + spawnOffset, 0); break; // Top
+                case 1: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMin.y - spawnOffset, 0); break; // Bottom
+                case 2: spawnPos = new Vector3(screenMax.x + spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Left
+                case 3: spawnPos = new Vector3(screenMin.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
+                default: break; // Error
+            }
+
+            objectPools[enemyIDs[Random.Range(0, enemyIDs.Length)]].ActivateObject(SetEnemyLevel(), spawnPos);
         }
 
-        
     }
 
     void SpawnTimer()
@@ -57,24 +75,32 @@ public class EnemySpawner : MonoBehaviour
 
         if (_timer > spawnInterval)
         {
-
+            SpawnEnemy();
             _timer = 0f;
         }
     }
 
-    void SpawnTableManager()
+    
+    /// <summary>
+    /// Sets the enemy level to be spawned, based on the current player level.
+    /// If the playerStat is not found, the enemy level will be set to 1.
+    /// </summary>
+    /// <returns>The level of the enemy to be spawned.</returns>
+    int SetEnemyLevel()
     {
-        if (_spawnTable != spawnTable)
+        int finalLevel = 1;
+        if (playerStat != null)
         {
-            _spawnTable = spawnTable;
-
-            enemyIDs = spawnTable.spawnIDTable;
+            finalLevel = Random.Range(playerStat.level, playerStat.level + 1);
         }
+
+        return finalLevel;
     }
 }
 
-[CreateAssetMenu(fileName = "SpawnTable", menuName = "Spawners/Spawn Table", order = 1)]
-public class SpawnTable : ScriptableObject
+[System.Serializable]
+public class SpawnTable
 {
     public int[] spawnIDTable;
+    public float tableChangeTime;
 }

@@ -115,7 +115,7 @@ public class DamageTextPool : BaseObjectPool
     /// <param name="enemyTransform">The transform of the enemy to position the anchor.</param>
     /// <param name="spawnPosition">The position to spawn the text in screen space.</param>
     /// <param name="damageAmount">The amount of damage to display.</param>
-    void OnPoolExhausted(Color32 color, Transform enemyTransform, Vector2 spawnPosition, int damageAmount)
+    protected override void OnPoolExhausted(Color32 color, Transform enemyTransform, Vector2 spawnPosition, int damageAmount)
     {
         // Instantiate new damage text and anchor objects
         GameObject obj = Instantiate(objectPrefab, transform.position, Quaternion.identity, textParent.transform);
@@ -150,18 +150,12 @@ public class DamageTextPool : BaseObjectPool
     /// <param name="anchorObj">The anchor object to deactivate.</param>
     public override void DeactivateObject(GameObject textObj, GameObject anchorObj)
     {
-        // Deactivate the damage text object
         textObj.SetActive(false);
-        // Add the deactivated object to the inactive list
         inactiveObjects.Add(textObj);
-        // Remove the object from the active list
         activeObjects.Remove(textObj);
 
-        // Deactivate the anchor object
         anchorObj.SetActive(false);
-        // Add the deactivated anchor to the inactive list
         inactiveAnchors.Add(anchorObj);
-        // Remove the anchor from the active list
         activeAnchors.Remove(anchorObj);
     }
 }

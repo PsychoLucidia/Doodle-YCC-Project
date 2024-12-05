@@ -40,7 +40,7 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
         ICollectEXP collectEXP = actor.GetComponent<ICollectEXP>();
         if (collectEXP != null)
         {
-            _enemyStat.playerStat = actor.GetComponentInParent<PlayerStat>();
+            _enemyStat.playerStat = actor.transform.GetComponent<PlayerStat>();
         }
     }
 
@@ -50,11 +50,6 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
         {
             Debug.Log("DamageTextPool null. referencing");
             _damageTextPool = FindObjectOfType<DamageTextPool>();
-        }
-
-        if (_enemyStat.playerStat == null)
-        {
-
         }
     }
 

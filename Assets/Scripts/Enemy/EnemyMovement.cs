@@ -7,7 +7,7 @@ public class EnemyMovement : BaseMovement
 {
     #region Events
 
-    public static Action<float> OnEnemyRawRotationChange;
+    public Action<float> OnEnemyRawRotationChange;
 
     #endregion
 

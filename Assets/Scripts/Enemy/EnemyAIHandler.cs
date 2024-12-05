@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class EnemyAIHandler : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] Transform playerTransform;
 
+    [Header("Settings")]
+    [SerializeField] bool _isEnemyRanged;
     private float _timeOfShots;
     public float startTimeOfShots;
 
@@ -29,7 +32,7 @@ public class EnemyAIHandler : MonoBehaviour
     {
         GetPlayerPosition();
 
-        if (projectiles != null)
+        if (projectiles != null && _isEnemyRanged)
         {
             if (_timeOfShots <= 0)
             {
