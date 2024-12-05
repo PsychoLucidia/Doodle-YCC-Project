@@ -9,6 +9,13 @@ public class EnemyStat : BaseStat
     public int xpDrop;
 
     public PlayerStat playerStat;
+    public EnemyPool enemyPool;
+    [SerializeField] EnemyMovement _enemyMovement;
+
+    void Awake()
+    {
+        _enemyMovement = GetComponent<EnemyMovement>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +35,14 @@ public class EnemyStat : BaseStat
 
         if (health <= 0)
         {
-
+            Die();
         }
     }
 
     void Die()
     {
-        
+        playerStat.currentExp += xpDrop;
+        enemyPool.DeactivateObject(this.gameObject);
     }
 
     void StatCalculation()
