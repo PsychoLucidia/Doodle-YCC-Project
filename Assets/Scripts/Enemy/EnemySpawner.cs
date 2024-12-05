@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
 
         objectPools = pools;
 
-        playerStat = FindObjectOfType<PlayerStat>();
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
     }
 
     // Start is called before the first frame update
@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
             case 3: spawnPos = new Vector3(screenMin.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
             default: break; // Error
         }
-        
+
         for (int i = 0; i < spawnCount; i++)
         {
             enemyIDs = spawnTable[0].spawnIDTable;
@@ -76,8 +76,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_timer > spawnTable[spawnTableIncrement].tableChangeTime)
         {
-
             spawnTableIncrement++;
+            
 
             _timer = 0;
         }

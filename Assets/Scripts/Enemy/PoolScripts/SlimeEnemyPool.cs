@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlimeEnemyPool : BaseObjectPool
@@ -22,6 +21,8 @@ public class SlimeEnemyPool : BaseObjectPool
             stat.level = Mathf.RoundToInt(GameManager.Instance.difficultyLevel * 1.4f);
             stat.speed = stat.initialSpeed;
             stat.additionalSpeed = SetSpeedMultiplier(playerLevel);
+            stat.maxHealth = stat.initialHealth;
+            stat.additionalHealth = SetAdditionalHealth(playerLevel);
 
 
             obj.SetActive(true);
@@ -59,13 +60,30 @@ public class SlimeEnemyPool : BaseObjectPool
         activeObjects.Add(obj);
     }
 
-    float SetSpeedMultiplier(int level)
-    {
-        int baseSpeed = GameManager.Instance.difficultyLevel - 0;
-        float levelSpeed = level * 0.01f;
+    /// <summary>
+/// Calculates the speed multiplier based on the player's level and game difficulty.
+/// </summary>
+/// <param name="level">The level of the player.</param>
+/// <returns>The calculated speed multiplier as a float.</returns>
+float SetSpeedMultiplier(int level)
+{
+    // Base speed is derived from the game's difficulty level.
+    int baseSpeed = GameManager.Instance.difficultyLevel;
 
-        float finalSpeed = baseSpeed + (levelSpeed - 0.01f);
-        return finalSpeed;
+    // Calculate speed increment based on player level.
+    float levelSpeed = level * 0.01f;
+
+    // Return the total speed multiplier.
+    return baseSpeed + (levelSpeed - 0.01f);
+}
+
+    int SetAdditionalHealth(int level)
+    {
+        int baseHealth = GameManager.Instance.difficultyLevel - 0;
+        float levelHealth = level * .01f;
+
+        int floatToInt = Mathf.RoundToInt(levelHealth);
+        return 0;
     }
 
 

@@ -9,6 +9,12 @@ public class EnemyStat : BaseStat
     public int xpDrop;
 
     public PlayerStat playerStat;
+    [SerializeField] EnemyMovement _enemyMovement;
+
+    void Awake()
+    {
+        _enemyMovement = GetComponent<EnemyMovement>();
+    }
 
     // Start is called before the first frame update
     void Start()
