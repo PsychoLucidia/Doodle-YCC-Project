@@ -36,11 +36,12 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
     }
 
     void OnTriggerEnter2D(Collider2D actor)
-    {
+    { 
+        Debug.Log("Hit: " + actor.gameObject.name);
         ICollectEXP collectEXP = actor.GetComponent<ICollectEXP>();
         if (collectEXP != null)
         {
-            _enemyStat.playerStat = actor.transform.GetComponent<PlayerStat>();
+            _enemyStat.playerStat = actor.transform.parent.parent.parent.GetComponent<PlayerStat>();
         }
     }
 

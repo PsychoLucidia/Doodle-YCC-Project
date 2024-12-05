@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHitbox : BaseHitbox, ICollectEXP
+public class WeaponHitbox : BaseHitbox
 {
     [SerializeField] PlayerAttackHandler _playerAttackHandler;
     [SerializeField] Animator _weaponAnimator;
@@ -53,6 +53,8 @@ public class WeaponHitbox : BaseHitbox, ICollectEXP
         {
             damageable.TakeDamage(currentAttackDamage);
         }
+
+        ICollectEXP collectEXP = other.GetComponent<ICollectEXP>();
     }
 
     IEnumerator AttackSequence()
