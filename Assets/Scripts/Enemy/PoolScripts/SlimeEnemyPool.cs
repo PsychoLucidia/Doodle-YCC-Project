@@ -45,7 +45,7 @@ public class SlimeEnemyPool : BaseObjectPool
     protected override void OnPoolExhausted(int level, Vector3 spawnPosition)
     {
         GameObject obj = Instantiate(objectPrefab, spawnPosition, Quaternion.identity, transform);
-        obj.name = "SlimeEnemy" + activeObjects.Count;
+        obj.name = gameObject.name + activeObjects.Count;
 
         EnemyStat stat = obj.GetComponent<EnemyStat>();
 
@@ -76,7 +76,7 @@ public class SlimeEnemyPool : BaseObjectPool
         {
             GameObject obj = Instantiate(objectPrefab, transform.position, Quaternion.identity, transform);
 
-            obj.name = "SlimeEnemy" + i;
+            obj.name = gameObject.name + i;
 
             obj.SetActive(false);
             inactiveObjects.Add(obj);

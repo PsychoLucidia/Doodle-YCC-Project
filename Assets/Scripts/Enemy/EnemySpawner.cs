@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     public SpawnTable[] spawnTable;
     public BaseObjectPool[] objectPools;
 
+    public int spawnTableIncrement = 0;
+
     public int[] enemyIDs;
 
     float _timer = 0f;
@@ -52,21 +54,33 @@ public class EnemySpawner : MonoBehaviour
         int randomSides = Random.Range(0, 3);
         Vector3 spawnPos = Vector3.zero;
 
-        for (int i = -1; i < spawnCount; i++)
+        switch (randomSides)
+        {
+            case 0: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMax.y + spawnOffset, 0); break; // Top
+            case 1: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMin.y - spawnOffset, 0); break; // Bottom
+            case 2: spawnPos = new Vector3(screenMax.x + spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Left
+            case 3: spawnPos = new Vector3(screenMin.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
+            default: break; // Error
+        }
+        
+        for (int i = 0; i < spawnCount; i++)
         {
             enemyIDs = spawnTable[0].spawnIDTable;
-            switch (randomSides)
-            {
-                case 0: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMax.y + spawnOffset, 0); break; // Top
-                case 1: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMin.y - spawnOffset, 0); break; // Bottom
-                case 2: spawnPos = new Vector3(screenMax.x + spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Left
-                case 3: spawnPos = new Vector3(screenMin.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
-                default: break; // Error
-            }
 
             objectPools[enemyIDs[Random.Range(0, enemyIDs.Length)]].ActivateObject(SetEnemyLevel(), spawnPos);
         }
 
+    }
+
+    void TableTracker()
+    {
+        if (_timer > spawnTable[spawnTableIncrement].tableChangeTime)
+        {
+
+            spawnTableIncrement++;
+
+            _timer = 0;
+        }
     }
 
     void SpawnTimer()
@@ -103,4 +117,6 @@ public class SpawnTable
 {
     public int[] spawnIDTable;
     public float tableChangeTime;
+    public int spawnCount;
+    public float spawnInterval;
 }

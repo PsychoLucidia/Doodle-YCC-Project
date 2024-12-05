@@ -536,7 +536,7 @@ MonoBehaviour:
   backBarImage: {fileID: 2088106831}
   frontBarImage: {fileID: 1668627662}
   _playerStat: {fileID: 0}
-  currentHealthValue: 0
+  _currentHealthValue: 0
 --- !u!1 &415344810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1209,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &695609954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695609955}
+  - component: {fileID: 695609956}
+  m_Layer: 0
+  m_Name: CursedSword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &695609955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695609954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1593038771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695609956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695609954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9699ec59030ff684f81c0925b3d4eb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeObjects: []
+  inactiveObjects: []
+  poolSize: 10
+  limitToPoolSize: 0
+  objectPrefab: {fileID: 7542047731368432480, guid: 71dddd3768648aa4e875209f92988ba7, type: 3}
 --- !u!1 &702047189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1477,7 @@ MonoBehaviour:
   backBarImage: {fileID: 628481654}
   frontBarImage: {fileID: 1063998680}
   _playerStat: {fileID: 0}
-  currentHealthValue: 0
+  _currentHealthValue: 0
 --- !u!1 &908904958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,9 +2547,12 @@ MonoBehaviour:
   spawnInterval: 0
   spawnTable:
   - spawnIDTable: 00000000
-    tableChangeTime: 0
+    tableChangeTime: -1
+    spawnCount: 0
+    spawnInterval: 0
   objectPools:
   - {fileID: 0}
+  spawnTableIncrement: 0
   enemyIDs: 
 --- !u!4 &1593038771
 Transform:
@@ -2516,6 +2568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1900714429}
+  - {fileID: 695609955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668627660
@@ -2856,6 +2909,7 @@ GameObject:
   - component: {fileID: 2034722719}
   - component: {fileID: 2034722721}
   - component: {fileID: 2034722720}
+  - component: {fileID: 2034722722}
   m_Layer: 5
   m_Name: XPBar
   m_TagString: Untagged
@@ -2922,6 +2976,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034722718}
   m_CullTransparentMesh: 1
+--- !u!114 &2034722722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034722718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7daeed4222eff264199deb0e318cb232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backBarImage: {fileID: 0}
+  frontBarImage: {fileID: 2116019738}
+  _playerStat: {fileID: 0}
+  _currentHealthValue: 0
 --- !u!1 &2050119322
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,8 +53,12 @@ public class WeaponHitbox : BaseHitbox
         {
             damageable.TakeDamage(currentAttackDamage);
         }
-
-        ICollectEXP collectEXP = other.GetComponent<ICollectEXP>();
+        
+        ICollectEXP setPlayerStat = other.GetComponent<ICollectEXP>();
+        if (setPlayerStat != null)
+        {
+            setPlayerStat.SetPlayerStat(this.transform.GetComponentInParent<PlayerStat>());
+        }
     }
 
     IEnumerator AttackSequence()

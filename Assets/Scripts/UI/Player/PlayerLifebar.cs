@@ -8,7 +8,7 @@ public class PlayerLifebar : BaseBarLogic
     [SerializeField] PlayerStat _playerStat;
 
     [Header("Private Variables")]
-    [SerializeField] float currentHealthValue;
+    [SerializeField] float _currentHealthValue;
 
     void Awake()
     {
@@ -24,29 +24,29 @@ public class PlayerLifebar : BaseBarLogic
     {
         float frontBarAmt = frontBarImage.fillAmount;
         float backBarAmt = backBarImage.fillAmount;
-        currentHealthValue = Mathf.InverseLerp(0, _playerStat.maxHealth, _playerStat.health);
+        _currentHealthValue = Mathf.InverseLerp(0, _playerStat.maxHealth, _playerStat.health);
 
-        if (currentHealthValue < frontBarAmt)
+        if (_currentHealthValue < frontBarAmt)
         {
             LeanTween.cancel(frontBarImage.gameObject);
             LeanTween.cancel(backBarImage.gameObject);
 
-            frontBarImage.fillAmount = currentHealthValue;
+            frontBarImage.fillAmount = _currentHealthValue;
             backBarImage.color = Color.red;
 
-            LeanTween.value(backBarImage.gameObject, backBarAmt, currentHealthValue, 0.5f).setOnUpdate((float val) => 
+            LeanTween.value(backBarImage.gameObject, backBarAmt, _currentHealthValue, 0.5f).setOnUpdate((float val) => 
                 { backBarImage.fillAmount = val; }).setIgnoreTimeScale(true);
         }
 
-        if (currentHealthValue > backBarAmt)
+        if (_currentHealthValue > backBarAmt)
         {
             LeanTween.cancel(frontBarImage.gameObject);
             LeanTween.cancel(backBarImage.gameObject);
 
-            backBarImage.fillAmount = currentHealthValue;
+            backBarImage.fillAmount = _currentHealthValue;
             backBarImage.color = Color.cyan;
 
-            LeanTween.value(frontBarImage.gameObject, frontBarAmt, currentHealthValue, 0.5f).setOnUpdate((float val) => 
+            LeanTween.value(frontBarImage.gameObject, frontBarAmt, _currentHealthValue, 0.5f).setOnUpdate((float val) => 
                 { frontBarImage.fillAmount = val; }).setIgnoreTimeScale(true);{}
         }
     }
