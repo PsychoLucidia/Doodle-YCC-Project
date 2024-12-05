@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICollectEXP {}
+public interface ICollectEXP
+{
+    void SetPlayerStat(PlayerStat playerStat);
+}
 
 public abstract class BaseStat : MonoBehaviour
 {

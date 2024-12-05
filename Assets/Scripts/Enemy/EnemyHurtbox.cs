@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHurtbox : BaseHurtbox, IDamageable
+public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
 {
-    [SerializeField] EnemyStat _enemyStat;
+    public EnemyStat enemyStat;
     DamageTextPool _damageTextPool;
 
     // Start is called before the first frame update
@@ -27,21 +27,11 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
         {
             _damageTextPool.ActivateObject
                 (new Color32(255, 0, 0, 255), this.transform.parent, Camera.main.WorldToScreenPoint(this.transform.position), damage);
-            _enemyStat.TakeDamage(CalculateDamage(damage));
+            enemyStat.TakeDamage(CalculateDamage(damage));
         }
         else
         {
             return;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D actor)
-    { 
-        Debug.Log("Hit: " + actor.gameObject.name);
-        ICollectEXP collectEXP = actor.GetComponent<ICollectEXP>();
-        if (collectEXP != null)
-        {
-            _enemyStat.playerStat = actor.transform.parent.parent.parent.GetComponent<PlayerStat>();
         }
     }
 
@@ -58,10 +48,15 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable
     {
         int initialDamage = inputDamage;
 
-        if (_enemyStat != null)
+        if (enemyStat != null)
         {
 
         }
         return inputDamage;
+    }
+
+    public void SetPlayerStat(PlayerStat thisPlayerStat)
+    {
+        enemyStat.playerStat = thisPlayerStat;
     }
 }
