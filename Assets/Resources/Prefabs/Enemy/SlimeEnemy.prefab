@@ -55,6 +55,7 @@ MonoBehaviour:
   initialDamage: 1
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 2
   health: 2
   maxHealth: 2
   damage: 1
@@ -67,6 +68,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 2
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &2637787023755444315
 MonoBehaviour:
   m_ObjectHideFlags: 0

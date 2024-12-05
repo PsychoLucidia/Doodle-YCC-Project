@@ -41,6 +41,7 @@ public abstract class BaseObjectPool : MonoBehaviour
     public virtual void DeactivateObject(GameObject enemyObj) 
     {
         enemyObj.SetActive(false);
+        activeObjects.Remove(enemyObj);
         inactiveObjects.Add(enemyObj);
     }
     

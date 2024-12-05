@@ -390,6 +390,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 572449553502291864, guid: c94a48b538347a4428e59a22e4aa888e, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &370326155
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +587,83 @@ MonoBehaviour:
   frontBarImage: {fileID: 1668627662}
   _playerStat: {fileID: 0}
   _currentHealthValue: 0
+--- !u!1 &408764867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408764869}
+  - component: {fileID: 408764868}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &408764868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408764867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 109.23}
+  m_EdgeRadius: 0
+--- !u!4 &408764869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408764867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52.17, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411573290
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +713,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 667176581050584591, guid: 8376a64e5680c114d92a2b167f9cb6c0, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &415344810
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +1044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a2314796d89cab9469c0b9f17456a19a, type: 2}
   m_sharedMaterial: {fileID: -2208595106572341796, guid: a2314796d89cab9469c0b9f17456a19a, type: 2}
@@ -1356,6 +1435,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 7542047731368432480, guid: 71dddd3768648aa4e875209f92988ba7, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &702047189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1773,7 @@ MonoBehaviour:
   initialDamage: 0
   initialDefense: 0
   initialSpeed: 5
+  initalExpDrop: 0
   health: 0
   maxHealth: 0
   damage: 0
@@ -1701,12 +1782,30 @@ MonoBehaviour:
   additionalDamage: 0
   additionalHealth: 0
   additionalSpeed: 0
-  level: 0
-  maxLevel: 0
+  level: 1
+  maxLevel: 99
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerAttackHandler: {fileID: 908904964}
   playerMovementCC: {fileID: 908904959}
+  initialExp: 20
   currentExp: 0
-  expToNextLevel: 0
+  expToNextLevel: 20
+  expMultiplier: 0.2
+  expLevelMultiplier: 0.3
 --- !u!114 &908904964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,6 +2311,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1341444580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341444582}
+  - component: {fileID: 1341444581}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1341444581
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341444580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 109.23}
+  m_EdgeRadius: 0
+--- !u!4 &1341444582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341444580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -52.17, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354473103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,6 +2713,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 8185637237325103575, guid: b7a62bfb5bbc128449d763b9407e9a73, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &1464147156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,18 +2864,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd1434a51cb1bb40a2ef024cb0d42b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpawnCount: 1
-  initialInterval: 5
   spawnOffset: 3
   spawnCount: 0
   spawnInterval: 0
   spawnTable:
   - spawnIDTable: 00000000
-    tableChangeTime: -1
-    spawnCount: 0
-    spawnInterval: 0
-  objectPools:
-  - {fileID: 0}
+    tableChangeTime: 20
+    spawnCount: 2
+    spawnInterval: 5
+  - spawnIDTable: 00000000
+    tableChangeTime: 20
+    spawnCount: 1
+    spawnInterval: 1
+  objectPools: []
   spawnTableIncrement: 0
   enemyIDs: 
 --- !u!4 &1593038771
@@ -3012,6 +3190,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 7077700105344004764, guid: 5fba64073b466ec4bb9aec150892f392, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &1900714428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3240,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 1268182187811764973, guid: 0d6f3465d562e28468c7be533e591556, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &1908504838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3290,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 889070704921432840, guid: 932722fb5db894f45adb9427632d6588, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &2022628381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3423,7 @@ MonoBehaviour:
   backBarImage: {fileID: 0}
   frontBarImage: {fileID: 2116019738}
   _playerStat: {fileID: 0}
-  _currentHealthValue: 0
+  _levelText: {fileID: 532431453}
 --- !u!1 &2050119322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,6 +3575,7 @@ MonoBehaviour:
   poolSize: 10
   limitToPoolSize: 0
   objectPrefab: {fileID: 9036377629843193417, guid: 2ab3b2166726170438acef8f068316f5, type: 3}
+  healthMultiplier: 0.15
 --- !u!1 &2088106829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,6 +3942,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3913803800027949433, guid: b805e1318d634424292e3f8c76630c71, type: 3}
+      propertyPath: xpDrop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913803800027949433, guid: b805e1318d634424292e3f8c76630c71, type: 3}
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
@@ -3839,3 +4025,5 @@ SceneRoots:
   - {fileID: 1677724481}
   - {fileID: 646364870}
   - {fileID: 4166391863848718275}
+  - {fileID: 1341444582}
+  - {fileID: 408764869}

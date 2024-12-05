@@ -9,6 +9,7 @@ public class EnemyStat : BaseStat
     public int xpDrop;
 
     public PlayerStat playerStat;
+    public EnemyPool enemyPool;
     [SerializeField] EnemyMovement _enemyMovement;
 
     void Awake()
@@ -34,13 +35,14 @@ public class EnemyStat : BaseStat
 
         if (health <= 0)
         {
-
+            Die();
         }
     }
 
     void Die()
     {
-        
+        playerStat.currentExp += xpDrop;
+        enemyPool.DeactivateObject(this.gameObject);
     }
 
     void StatCalculation()
