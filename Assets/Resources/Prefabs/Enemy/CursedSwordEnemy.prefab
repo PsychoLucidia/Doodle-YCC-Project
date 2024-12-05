@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7353980245309265910}
   - component: {fileID: 790644356249138244}
   - component: {fileID: 5749161545322920031}
+  - component: {fileID: 6933948238613912654}
   m_Layer: 0
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -80,7 +81,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 0}
+  _enemyStat: {fileID: 8952241403835553364}
+--- !u!50 &6933948238613912654
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101271978187718976}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5702882434026665938
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +279,7 @@ MonoBehaviour:
   idleAnimationName: 
   moveAnimationName: 
   attackAnimationName: 
+  enemyMovement: {fileID: 2116901436876294803}
 --- !u!1 &7542047731368432480
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,14 +331,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 0
+  initialDamage: 0
+  initialDefense: 0
+  initialSpeed: 0
   health: 2
   maxHealth: 2
-  speed: 0
   damage: 1
   defense: 0
+  speed: 0
+  additionalDamage: 0
+  additionalHealth: 0
+  additionalSpeed: 0
   level: 1
   maxLevel: 1
   xpDrop: 0
+  playerStat: {fileID: 0}
 --- !u!114 &2116901436876294803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +382,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 0}
   playerTransform: {fileID: 0}
+  _isEnemyRanged: 0
+  startTimeOfShots: 0
+  projectiles: {fileID: 0}
 --- !u!95 &7262298384570454527
 Animator:
   serializedVersion: 5

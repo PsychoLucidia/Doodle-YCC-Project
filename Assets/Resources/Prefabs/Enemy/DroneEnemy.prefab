@@ -51,13 +51,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 0
+  initialDamage: 0
+  initialDefense: 0
+  initialSpeed: 0
   health: 2
   maxHealth: 2
-  speed: 0
   damage: 1
   defense: 0
+  speed: 0
+  additionalDamage: 0
+  additionalHealth: 0
+  additionalSpeed: 0
   level: 1
   maxLevel: 1
+  xpDrop: 0
+  playerStat: {fileID: 0}
 --- !u!114 &153777300196967086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 0}
   playerTransform: {fileID: 0}
+  _isEnemyRanged: 0
+  startTimeOfShots: 0
+  projectiles: {fileID: 0}
 --- !u!95 &3265905340178178988
 Animator:
   serializedVersion: 5
@@ -243,6 +255,7 @@ MonoBehaviour:
   idleAnimationName: 
   moveAnimationName: 
   attackAnimationName: 
+  enemyMovement: {fileID: 153777300196967086}
 --- !u!1 &5529844300352534185
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +334,7 @@ GameObject:
   - component: {fileID: 2914113371655505627}
   - component: {fileID: 405188785621112359}
   - component: {fileID: 7002825654648918772}
+  - component: {fileID: 1880338443704919935}
   m_Layer: 0
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -390,3 +404,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyStat: {fileID: 9184881269672695852}
+--- !u!50 &1880338443704919935
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763889867100648378}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

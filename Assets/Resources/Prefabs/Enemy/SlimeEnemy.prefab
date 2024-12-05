@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 9155554709284285999}
   - component: {fileID: 6958655731444006031}
   - component: {fileID: 7890241977925907664}
+  - component: {fileID: 2945729296064164633}
   m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -337,6 +338,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyStat: {fileID: 1083381804994775324}
+--- !u!50 &2945729296064164633
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803452106330773705}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7358912737308150008
 GameObject:
   m_ObjectHideFlags: 0
