@@ -8,8 +8,8 @@ public class PlayerAttackHandler : MonoBehaviour
 {
     #region Events
 
-    public static Action<int> OnSendAttackDamage;
-    public static Action OnPlayerAttack;
+    public Action<int> OnSendAttackDamage;
+    public Action OnPlayerAttack;
 
     #endregion
 

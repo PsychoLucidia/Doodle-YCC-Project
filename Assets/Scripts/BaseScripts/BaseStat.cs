@@ -14,6 +14,7 @@ public abstract class BaseStat : MonoBehaviour
     public int initialDamage;
     public int initialDefense;
     public float initialSpeed;
+    public int initalExpDrop;
 
     [Header("Stats")]
     public int health;

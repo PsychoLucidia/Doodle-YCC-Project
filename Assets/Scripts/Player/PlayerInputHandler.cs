@@ -39,4 +39,9 @@ public class PlayerInputHandler : MonoBehaviour
             playerAttackHandler.PlayerAttack();
         }
     }
+
+    void HandlePauseMenu()
+    {
+        
+    }
 }

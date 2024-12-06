@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerAnimation : BaseAnimation
 {
     [Header("Sub Components")]
-    [SerializeField] PlayerMovementCC playerMovementCC;
-    [SerializeField] PlayerAttackHandler playerAttackHandler;
+    [SerializeField] private PlayerMovementCC playerMovementCC;
+    [SerializeField] private PlayerAttackHandler playerAttackHandler;
 
     Coroutine attackSequence;
 
@@ -18,12 +18,12 @@ public class PlayerAnimation : BaseAnimation
 
     void OnEnable()
     {
-        PlayerMovementCC.OnPlayerRawRotationChange += FlipSprite;
+        playerMovementCC.OnPlayerRawRotationChange += FlipSprite;
     }
 
     void OnDisable()
     {
-        PlayerMovementCC.OnPlayerRawRotationChange -= FlipSprite;
+        playerMovementCC.OnPlayerRawRotationChange -= FlipSprite;
     }
 
     /// <summary>

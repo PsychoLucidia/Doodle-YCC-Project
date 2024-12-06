@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class ArrowIndicator : MonoBehaviour
 {
+    private PlayerMovementCC _playerMovementCC;
+
+    /// <summary>
+    /// Called when the script is enabled.
+    /// If the PlayerMovementCC has not been found yet, it will be found by tag.
+    /// The RotateArrow method will be added as a listener to the PlayerMovementCC's OnPlayerRotationChange event.
+    /// </summary>
     void OnEnable()
     {
-        // Subscribe to the OnPlayerRotationChange event so that we can update the arrow indicator's rotation when the player's rotation changes.
-        PlayerMovementCC.OnPlayerRotationChange += RotateArrow;
+        if (_playerMovementCC == null)
+        {
+            _playerMovementCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementCC>();
+        }
+        
+        if (_playerMovementCC != null) { _playerMovementCC.OnPlayerRotationChange += RotateArrow; }
     }
 
 
     void OnDisable()
     {
-        // Unsubscribe from the OnPlayerRotationChange event when the component is disabled.
-        // This helps prevent memory leaks by removing the reference to the RotateArrow method.
-        PlayerMovementCC.OnPlayerRotationChange -= RotateArrow;
+        _playerMovementCC.OnPlayerRotationChange -= RotateArrow;
     }
 
     /// <summary>
-    /// Rotate the arrow indicator to match the rotation of the player.
+    /// Rotates the arrow indicator to the specified angle.
     /// </summary>
-    /// <param name="angle">The angle in degrees to rotate the arrow indicator.</param>
+    /// <param name="angle">The angle in degrees to rotate the arrow around the Z axis.</param>
     void RotateArrow(float angle)
     {
-        // Rotate the arrow indicator to match the rotation of the player.
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

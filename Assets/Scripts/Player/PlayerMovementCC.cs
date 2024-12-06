@@ -7,8 +7,8 @@ public class PlayerMovementCC : BaseMovement
 {
     #region Events
 
-    public static Action<float> OnPlayerRotationChange; // Called when the player's rotation changes
-    public static Action<float> OnPlayerRawRotationChange;
+    public Action<float> OnPlayerRotationChange; // Called when the player's rotation changes
+    public Action<float> OnPlayerRawRotationChange;
 
     #endregion    
 
@@ -18,7 +18,7 @@ public class PlayerMovementCC : BaseMovement
     public PlayerMoveState playerState;
 
     // Non-serialized
-    GameObject _rootObj;
+    private GameObject _rootObj;
 
     #endregion
 

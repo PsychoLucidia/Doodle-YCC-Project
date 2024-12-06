@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class WeaponHitbox : BaseHitbox
 {
-    [SerializeField] PlayerAttackHandler _playerAttackHandler;
-    [SerializeField] Animator _weaponAnimator;
+    [SerializeField] private PlayerAttackHandler _playerAttackHandler;
+    [SerializeField] private Animator _weaponAnimator;
+    private PlayerMovementCC _playerMovementCC;
     
 
     Coroutine attackCoroutine;
 
     void OnEnable()
     {
-        PlayerAttackHandler.OnSendAttackDamage += SetCurrentDamage;
-        PlayerAttackHandler.OnPlayerAttack += PlayAnimation;
-        PlayerMovementCC.OnPlayerRawRotationChange += CurrentRotation;
+        _playerAttackHandler.OnSendAttackDamage += SetCurrentDamage;
+        _playerAttackHandler.OnPlayerAttack += PlayAnimation;
+
+        if (_playerMovementCC == null)
+        {
+            _playerMovementCC = GetComponentInParent<PlayerMovementCC>();
+        }
+
+        if (_playerMovementCC != null) { _playerMovementCC.OnPlayerRawRotationChange += CurrentRotation; }
     }
 
     void OnDisable()
     {
-        PlayerAttackHandler.OnSendAttackDamage -= SetCurrentDamage;
-        PlayerMovementCC.OnPlayerRawRotationChange -= CurrentRotation;
+        _playerAttackHandler.OnSendAttackDamage -= SetCurrentDamage;
+        _playerAttackHandler.OnPlayerAttack -= PlayAnimation;
+
+        _playerMovementCC.OnPlayerRawRotationChange -= CurrentRotation;
     }
 
 

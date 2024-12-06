@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class DamageTextPool : BaseObjectPool
 {
     [Header("Damage Text Pool Parents")]
-    [SerializeField] GameObject textParent;
-    [SerializeField] GameObject anchorParent;
+    [SerializeField] private GameObject textParent;
+    [SerializeField] private GameObject anchorParent;
 
     [Header("World Space Anchors")]
     public List<GameObject> activeAnchors = new List<GameObject>();
     public List<GameObject> inactiveAnchors = new List<GameObject>();
 
     [Header("Anchor GameObject")]
-    [SerializeField] GameObject anchorObj;
+    [SerializeField] private GameObject anchorObj;
 
     void Awake()
     {

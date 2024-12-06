@@ -55,6 +55,7 @@ MonoBehaviour:
   initialDamage: 1
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 2
   health: 2
   maxHealth: 2
   damage: 1
@@ -67,6 +68,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 2
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &2637787023755444315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3451071869805446582}
   - component: {fileID: 6394873307083401923}
+  - component: {fileID: 6987507014875319416}
   m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
@@ -432,3 +436,17 @@ CircleCollider2D:
   m_Offset: {x: 0.019436955, y: -0.06802952}
   serializedVersion: 2
   m_Radius: 0.65549576
+--- !u!114 &6987507014875319416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358912737308150008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd629c725ce40445b91293e43a2d131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttackDamage: 0
+  _enemyStat: {fileID: 1083381804994775324}

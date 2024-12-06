@@ -19,6 +19,10 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
         
     }
 
+    /// <summary>
+    /// Takes damage and displays a damage text object if available.
+    /// </summary>
+    /// <param name="damage">The amount of damage to take.</param>
     public void TakeDamage(int damage)
     {
         GetComponents();

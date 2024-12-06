@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ExperienceBar : BaseBarLogic
 {
     [Header("Private Components (Get on Awake)")]
-    [SerializeField] PlayerStat _playerStat;
+    [SerializeField] private PlayerStat _playerStat;
+    [SerializeField] private TextMeshProUGUI _levelText;
 
     [Header("Private Variables")]
-    [SerializeField] float _currentHealthValue;
+    private float _currentHealthValue;
+    private float _previousHealthValue;
+    private float _currentLevelValue;
+    private float _previousLevelValue;
 
     void Awake()
     {
@@ -25,27 +30,45 @@ public class ExperienceBar : BaseBarLogic
     void Update()
     {
         UpdateBar();
+        LevelText();
     }
 
+    /// <summary>
+    /// Updates the experience bar based on the player's current experience.
+    /// The bar is divided into two images: the front bar and the back bar.
+    /// The front bar is for the player's current experience, while the back bar is for the player's total experience to the next level.
+    /// When the player's experience changes, the respective bar is updated with a LeanTween animation.
+    /// </summary>
     public override void UpdateBar()
     {
+        // Get the current fill amounts of the front and back bars
         float frontBarAmt = frontBarImage.fillAmount;
 
+        // Calculate the fill amount of the experience bar based on the player's current experience
         _currentHealthValue = Mathf.InverseLerp(0, _playerStat.expToNextLevel, _playerStat.currentExp);
 
-        if (_currentHealthValue < frontBarAmt)
+        // If the player's experience has changed
+        if (_currentHealthValue != _previousHealthValue)
         {
+            // Store the new value of the front bar
+            _previousHealthValue = _currentHealthValue;
+
+            // Cancel any existing animations
             LeanTween.cancel(frontBarImage.gameObject);
 
-            LeanTween.value(frontBarImage.gameObject, frontBarAmt, _currentHealthValue, 0.5f)
+            // Animate the front bar to the new value
+            LeanTween.value(frontBarImage.gameObject, frontBarAmt, _currentHealthValue, 0.5f).setEaseOutCirc()
                 .setOnUpdate((float val) => { frontBarImage.fillAmount = val; }).setIgnoreTimeScale(true);
         }
+    }
 
-        if (_currentHealthValue > frontBarAmt)
+    void LevelText()
+    {
+        _currentLevelValue = _playerStat.level;
+        
+        if (_currentLevelValue != _previousLevelValue)
         {
-            LeanTween.cancel(frontBarImage.gameObject);
-
-            LeanTween.value(frontBarImage.gameObject, frontBarAmt, _currentHealthValue, 0.5f);
+            _levelText.text = _playerStat.level.ToString();
         }
     }
 }

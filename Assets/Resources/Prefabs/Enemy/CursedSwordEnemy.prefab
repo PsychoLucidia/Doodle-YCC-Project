@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 790644356249138244}
   - component: {fileID: 5749161545322920031}
   - component: {fileID: 6933948238613912654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00485932, y: -0.13711286}
   serializedVersion: 2
-  m_Radius: 0.59260136
+  m_Radius: 0.58
 --- !u!114 &5749161545322920031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 8952241403835553364}
+  enemyStat: {fileID: 0}
 --- !u!50 &6933948238613912654
 Rigidbody2D:
   serializedVersion: 4
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530929399062199060}
   - component: {fileID: 6741060569757558107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019436955, y: -0.11085534}
+  m_Offset: {x: 0, y: -0.11085534}
   serializedVersion: 2
   m_Radius: 0.61266994
 --- !u!1 &7101132649652912392
@@ -335,6 +335,7 @@ MonoBehaviour:
   initialDamage: 0
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 0
   health: 2
   maxHealth: 2
   damage: 1
@@ -347,6 +348,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 0
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &2116901436876294803
 MonoBehaviour:
   m_ObjectHideFlags: 0
