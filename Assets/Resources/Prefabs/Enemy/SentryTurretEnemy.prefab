@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6889580834780418176}
   - component: {fileID: 6227128406042494969}
   - component: {fileID: 8881096748675465836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 2084364372586294185}
+  enemyStat: {fileID: 0}
 --- !u!50 &8881096748675465836
 Rigidbody2D:
   serializedVersion: 4
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558573777179852222}
   - component: {fileID: 3596565535340532504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,6 +335,7 @@ MonoBehaviour:
   initialDamage: 0
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 0
   health: 2
   maxHealth: 2
   damage: 1
@@ -347,6 +348,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 0
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &7304779667822280266
 MonoBehaviour:
   m_ObjectHideFlags: 0

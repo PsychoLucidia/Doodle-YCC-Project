@@ -56,6 +56,7 @@ MonoBehaviour:
   initialDamage: 1
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 0
   health: 2
   maxHealth: 2
   damage: 1
@@ -68,6 +69,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 2
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &1357059467344627082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +274,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0048593283, y: -0.08260721}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6457776
 --- !u!114 &9008917969018731717
@@ -286,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 923199310278472679}
+  enemyStat: {fileID: 0}
 --- !u!50 &8264960549741619140
 Rigidbody2D:
   serializedVersion: 4
@@ -378,7 +381,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019436955, y: -0.06802952}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.65549576
 --- !u!1 &8856883012357467701

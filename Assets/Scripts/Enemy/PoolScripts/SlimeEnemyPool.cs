@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPool : BaseObjectPool
 {
-    public float healthMultiplier = 0.15f;
+    public float additionalHealthMultiplier = 0.15f;
     void Awake()
     {
         Initialization();
@@ -103,7 +103,7 @@ public class EnemyPool : BaseObjectPool
     {
         int baseHealth = (GameManager.Instance.difficultyLevel - 1) * 5;
 
-        float levelHealth = level * healthMultiplier;
+        float levelHealth = level * additionalHealthMultiplier;
 
         int floatToInt = Mathf.RoundToInt(levelHealth);
 

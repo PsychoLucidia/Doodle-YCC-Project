@@ -6,6 +6,7 @@ public class WeaponHitbox : BaseHitbox
 {
     [SerializeField] private PlayerAttackHandler _playerAttackHandler;
     [SerializeField] private Animator _weaponAnimator;
+    private PlayerMovementCC _playerMovementCC;
     
 
     Coroutine attackCoroutine;
@@ -15,8 +16,12 @@ public class WeaponHitbox : BaseHitbox
         _playerAttackHandler.OnSendAttackDamage += SetCurrentDamage;
         _playerAttackHandler.OnPlayerAttack += PlayAnimation;
 
-        PlayerMovementCC playerMovementCC = GetComponentInParent<PlayerMovementCC>();
-        playerMovementCC.OnPlayerRawRotationChange += CurrentRotation;
+        if (_playerMovementCC == null)
+        {
+            _playerMovementCC = GetComponentInParent<PlayerMovementCC>();
+        }
+
+        if (_playerMovementCC != null) { _playerMovementCC.OnPlayerRawRotationChange += CurrentRotation; }
     }
 
     void OnDisable()
@@ -24,8 +29,7 @@ public class WeaponHitbox : BaseHitbox
         _playerAttackHandler.OnSendAttackDamage -= SetCurrentDamage;
         _playerAttackHandler.OnPlayerAttack -= PlayAnimation;
 
-        PlayerMovementCC playerMovementCC = GetComponentInParent<PlayerMovementCC>();
-        playerMovementCC.OnPlayerRawRotationChange -= CurrentRotation;
+        _playerMovementCC.OnPlayerRawRotationChange -= CurrentRotation;
     }
 
 
