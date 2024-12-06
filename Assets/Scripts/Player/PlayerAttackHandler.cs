@@ -11,6 +11,8 @@ public class PlayerAttackHandler : MonoBehaviour
     public Action<int> OnSendAttackDamage;
     public Action OnPlayerAttack;
 
+    public UnityEvent OnAttackStart;
+
     #endregion
 
     #region Variables
@@ -41,6 +43,7 @@ public class PlayerAttackHandler : MonoBehaviour
         playerAttackState = PlayerAttackState.Attacking;
         OnSendAttackDamage?.Invoke(CalculateAttackDamage());
         OnPlayerAttack?.Invoke();
+        OnAttackStart?.Invoke();
     }
 
     int CalculateAttackDamage()

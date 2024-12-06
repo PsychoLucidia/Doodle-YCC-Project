@@ -12,6 +12,8 @@ public class EnemyHitbox : BaseHitbox
 
     private float _hitboxTimer = 0f;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,16 @@ public class EnemyHitbox : BaseHitbox
     // Update is called once per frame
     void Update()
     {
-        
+        ActivateHitbox();
     }
 
     void ActivateHitbox()
     {
-        if (_hitboxTimer <= 0)
+        if (_hitboxTimer > 0)
+        {
+            _hitboxTimer -= Time.deltaTime;
+        }
+        else if (_hitboxTimer <= 0)
         {
             _hitbox.enabled = true;
         }

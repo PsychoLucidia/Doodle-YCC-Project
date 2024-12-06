@@ -20,6 +20,6 @@ public class PlayerHurtbox : BaseHurtbox, IDamageable
 
     public void TakeDamage(int damage)
     {
-        
+        _playerStat.TakeDamage(CalculateDamage(damage));
     }
 }

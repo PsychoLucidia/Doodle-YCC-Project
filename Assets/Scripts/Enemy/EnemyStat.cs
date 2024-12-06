@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class EnemyStat : BaseStat
 {
     public UnityEvent OnEnemyHurt;
+    public UnityEvent OnEnemyDie;
 
     [Header("EXP Drop")]
     public int xpDrop;
@@ -17,6 +18,8 @@ public class EnemyStat : BaseStat
     public ParticleSpawner particleSpawner;
     public int particleID;
     [SerializeField] private EnemyMovement _enemyMovement;
+    [SerializeField] private float _despawnTime;
+
 
     void Awake()
     {
@@ -26,7 +29,17 @@ public class EnemyStat : BaseStat
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        Transform transformSFX = soundManager.transform.Find("SFX");
+        AudioSource audioSource = transformSFX.transform.Find("EnemyDie").GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource is null");
+            return;
+        }
+        else Debug.Log("AudioSource is not null");
+        OnEnemyDie.AddListener(audioSource.Play);
     }
 
     // Update is called once per frame
@@ -49,9 +62,15 @@ public class EnemyStat : BaseStat
 
     void Die()
     {
+        OnEnemyDie?.Invoke();
         playerStat.currentExp += xpDrop;
         particleSpawner.Spawn(particleID, this.transform.position);
-        enemyPool.DeactivateObject(this.gameObject);
+        HandleDespawn();
+    }
+
+    void HandleDespawn()
+    {
+        StartCoroutine(DespawnTimer(_despawnTime));
     }
 
     void StatCalculation()
@@ -68,5 +87,11 @@ public class EnemyStat : BaseStat
                 _enemyMovement.entitySpeed = speed;
             }
         }
+    }
+
+    IEnumerator DespawnTimer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        enemyPool.DeactivateObject(this.gameObject);
     }
 }

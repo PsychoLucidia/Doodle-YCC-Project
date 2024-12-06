@@ -55,7 +55,7 @@ public class PlayerStat : BaseStat
 
     public override void TakeDamage(int damage)
     {
-
+        health -= damage;
     }
 
     void ValueTracker()
@@ -121,6 +121,12 @@ public class PlayerStat : BaseStat
         return initialValue + convertedValue;
     }
 
+    /// <summary>
+    /// Checks and updates the player's health based on recalculated values.
+    /// If the game hasn't started, sets the initial health. Adjusts health
+    /// and maxHealth by the difference between new and previous health values.
+    /// Ensures health does not fall below 1 when decremented.
+    /// </summary>
     void CheckHealth()
     {
         int newHealth = RecalculateHealth();

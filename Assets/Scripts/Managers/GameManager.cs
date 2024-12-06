@@ -3,16 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public event Action<int> OnDifficultyLevelChanged; 
+    public UnityEvent UnityEventDiffChange;
 
     public static GameManager Instance;
 
     [Header("Enums")]
     public PauseState pauseState;
     private PauseState _previousPauseState;
+
+    [Header("Spawners")]
+    public EnemySpawner enemySpawner;
 
     [Header("Stats")]
     public PlayerStat playerStat;
@@ -39,6 +44,7 @@ public class GameManager : MonoBehaviour
     void Initialization()
     {
         playerStat = FindObjectOfType<PlayerStat>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
     }
 
     void Update()

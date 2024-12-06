@@ -30,11 +30,12 @@ public class EnemyPool : BaseObjectPool
             obj.transform.position = spawnPosition;
 
             stat.enemyPool = this;
-            stat.level = Mathf.RoundToInt(GameManager.Instance.difficultyLevel * 1.4f);
-            stat.speed = stat.initialSpeed + SetSpeedMultiplier(playerLevel);
             stat.maxHealth = stat.initialHealth + SetAdditionalHealth(playerLevel);
             stat.health = stat.maxHealth;
+            stat.speed = stat.initialSpeed + SetSpeedMultiplier(playerLevel);
+            stat.damage = stat.initialDamage + SetDamageMultiplier(playerLevel);
             stat.xpDrop = stat.initalExpDrop;
+            stat.level = Mathf.RoundToInt(GameManager.Instance.difficultyLevel * 1.4f);
 
             obj.SetActive(true);
             inactiveObjects.RemoveAt(0);
@@ -96,6 +97,14 @@ public class EnemyPool : BaseObjectPool
 
         // Return the total speed multiplier.
         return baseSpeed + (levelSpeed - 0.01f);
+    }
+
+    int SetDamageMultiplier(int level)
+    {
+        float diffLevelMultiplier = (GameManager.Instance.difficultyLevel - 1) * 1.6f;
+        float levelMultiplier = level * 0.3f;
+
+        return Mathf.RoundToInt(diffLevelMultiplier + levelMultiplier);
     }
 
     /// <summary>

@@ -8,9 +8,6 @@ public class WeaponHitbox : BaseHitbox
     [SerializeField] private Animator _weaponAnimator;
     private PlayerMovementCC _playerMovementCC;
 
-    public AudioSource swordSwing;
-    
-
     Coroutine attackCoroutine;
 
     void OnEnable()
@@ -75,7 +72,6 @@ public class WeaponHitbox : BaseHitbox
     IEnumerator AttackSequence()
     {
         _weaponAnimator.Play("MainSwordSwing");
-        swordSwing.Play();
 
         while (!_weaponAnimator.GetCurrentAnimatorStateInfo(0).IsName("MainSwordSwing")) { yield return null; }
 

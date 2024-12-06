@@ -66,12 +66,19 @@ MonoBehaviour:
   additionalSpeed: 0
   level: 1
   maxLevel: 200
+  OnEnemyHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnemyDie:
+    m_PersistentCalls:
+      m_Calls: []
   xpDrop: 4
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
   particleSpawner: {fileID: 0}
   particleID: 0
   _enemyMovement: {fileID: 0}
+  _despawnTime: 0
 --- !u!114 &153777300196967086
 MonoBehaviour:
   m_ObjectHideFlags: 0

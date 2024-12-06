@@ -11,22 +11,28 @@ public class BuffSelector : MonoBehaviour
     public GameObject buffPanelPrefab;
 
     [Header("Lists")]
-    public List<BuffData> buffCommon = new List<BuffData>();
-    public List<BuffData> buffUncommon = new List<BuffData>();
-    public List<BuffData> buffRare = new List<BuffData>();
+    public BuffData[] buffCommon;
+    public BuffData[] buffUncommon;
+    public BuffData[] buffRare;
 
     [Header("Buff Selector UI")]
     [SerializeField] private GameObject _buffUICanvas;
     [SerializeField] private GameObject _buffUI;
 
-
-
-
-
+    public List<GameObject> buffPanelList = new List<GameObject>();
 
     void Awake()
     {
+        Initialization();
         ObjectsInitialization();
+    }
+
+    void Initialization()
+    {
+
+        buffCommon = Resources.LoadAll<BuffData>("Buffs/Common");
+        buffUncommon = Resources.LoadAll<BuffData>("Buffs/Uncommon");
+        buffRare = Resources.LoadAll<BuffData>("Buffs/Rare");
     }
 
     void ObjectsInitialization()
@@ -34,6 +40,16 @@ public class BuffSelector : MonoBehaviour
         _buffUICanvas = GameObject.FindGameObjectWithTag("BuffUI");
 
         _buffUI = _buffUICanvas.transform.Find("BuffUI").gameObject;
+
+        Transform buffPanel = _buffUI.transform.Find("BuffPanel");
+
+        for (int i = 0; i < selectableCount; i++)
+        {
+            GameObject buffPanelObj = Instantiate(buffPanelPrefab, buffPanel.transform.position, Quaternion.identity, buffPanel.transform);
+
+            buffPanelList.Add(buffPanelObj);
+        }
+
     }
 
     // Start is called before the first frame update
@@ -46,6 +62,12 @@ public class BuffSelector : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    void OpenBuffPanel()
+    {
+
     }
 }
 
