@@ -6,6 +6,7 @@ public abstract class BaseAnimation : MonoBehaviour
 {
     [Header("Base Settings")]
     [SerializeField] protected bool enableFlip = true;
+    [SerializeField] protected bool enableSpriteRotation = false;
 
     [Header("Base Components")]
     [SerializeField] protected Animator animator;

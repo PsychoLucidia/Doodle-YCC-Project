@@ -165,11 +165,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFlip: 1
+  enableSpriteRotation: 0
   animator: {fileID: 4871410062517981956}
   spriteRenderer: {fileID: 4166267185554615292}
   idleAnimationName: 
   moveAnimationName: 
   attackAnimationName: 
+  enemyMovement: {fileID: 0}
 --- !u!1 &535254441109700284
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4347789835475225167
 Transform:
   m_ObjectHideFlags: 0
@@ -221,14 +223,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 0
+  initialDamage: 0
+  initialDefense: 0
+  initialSpeed: 0
+  initalExpDrop: 0
   health: 0
   maxHealth: 0
-  speed: 0
   damage: 0
   defense: 0
+  speed: 0
+  additionalDamage: 0
+  additionalHealth: 0
+  additionalSpeed: 0
   level: 0
   maxLevel: 0
   xpDrop: 0
+  playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &7708551727184344470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +262,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   hurtboxTransform: {fileID: 0}
   enemyMoveState: 0
-  playerTransform: {fileID: 0}
+  _spriteTransform: {fileID: 0}
 --- !u!114 &8437287887253249499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 0}
   playerTransform: {fileID: 0}
+  _isEnemyRanged: 0
+  startTimeOfShots: 0
+  projectiles: {fileID: 0}
 --- !u!95 &4871410062517981956
 Animator:
   serializedVersion: 5
@@ -391,4 +407,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 3913803800027949433}
+  enemyStat: {fileID: 0}

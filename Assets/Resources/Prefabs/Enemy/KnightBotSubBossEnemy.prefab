@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6074881159273314297
 Transform:
   m_ObjectHideFlags: 0
@@ -56,6 +56,7 @@ MonoBehaviour:
   initialDamage: 1
   initialDefense: 0
   initialSpeed: 0
+  initalExpDrop: 0
   health: 2
   maxHealth: 2
   damage: 1
@@ -68,6 +69,8 @@ MonoBehaviour:
   maxLevel: 1
   xpDrop: 2
   playerStat: {fileID: 0}
+  enemyPool: {fileID: 0}
+  _enemyMovement: {fileID: 0}
 --- !u!114 &5717686928248993498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +91,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   hurtboxTransform: {fileID: 0}
   enemyMoveState: 0
-  playerTransform: {fileID: 0}
+  _spriteTransform: {fileID: 0}
 --- !u!114 &8839616589017785101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyStat: {fileID: 8405754604279570283}
+  enemyStat: {fileID: 0}
 --- !u!50 &479985649701127019
 Rigidbody2D:
   serializedVersion: 4
@@ -412,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFlip: 1
+  enableSpriteRotation: 0
   animator: {fileID: 1638714802697620549}
   spriteRenderer: {fileID: 734476621897462949}
   idleAnimationName: 

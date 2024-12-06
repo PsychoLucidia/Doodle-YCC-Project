@@ -16,18 +16,16 @@ public class EnemyMovement : BaseMovement
     [Header("Enums")]
     public EnemyMoveState enemyMoveState;
 
-    [Header("Private Variables")]
-    [SerializeField] Transform playerTransform;
+    [Header("Transforms")]
+    [SerializeField] private Transform _spriteTransform;
 
     #endregion
 
-    GameObject _rootObj;
+    private GameObject _rootObj;
 
     void Awake()
     {
         _rootObj = this.gameObject;
-
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Start is called before the first frame update
@@ -46,6 +44,8 @@ public class EnemyMovement : BaseMovement
     public override void MoveLogic()
     {
         base.MoveLogic();
+
+        _spriteTransform.rotation = Quaternion.Euler(0f, 0f, smoothAngle);
 
         if (moveDirection.magnitude > 0.1f)
         {
