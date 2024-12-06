@@ -10,7 +10,7 @@ public class EnemyStat : BaseStat
 
     public PlayerStat playerStat;
     public EnemyPool enemyPool;
-    [SerializeField] EnemyMovement _enemyMovement;
+    [SerializeField] private EnemyMovement _enemyMovement;
 
     void Awake()
     {

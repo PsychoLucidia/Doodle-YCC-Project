@@ -19,13 +19,13 @@ public class PlayerStat : BaseStat
     public int expToNextLevel;
 
     [Header("XP Multiplier Settings")]
-    [SerializeField] float expMultiplier = 0.07f;
-    [SerializeField] float expLevelMultiplier = 0.3f;
+    [SerializeField] private float expMultiplier = 0.07f;
+    [SerializeField] private float expLevelMultiplier = 0.3f;
 
-    int _previousDamage = 0;
-    int _previousHealth = 0;
+    private int _previousDamage = 0;
+    private int _previousHealth = 0;
 
-    bool _gameStarted = false;
+    private bool _gameStarted = false;
 
     void Awake()
     {

@@ -6,14 +6,14 @@ using TMPro;
 public class ExperienceBar : BaseBarLogic
 {
     [Header("Private Components (Get on Awake)")]
-    [SerializeField] PlayerStat _playerStat;
-    [SerializeField] TextMeshProUGUI _levelText;
+    [SerializeField] private PlayerStat _playerStat;
+    [SerializeField] private TextMeshProUGUI _levelText;
 
     [Header("Private Variables")]
-    float _currentHealthValue;
-    float _previousHealthValue;
-    float _currentLevelValue;
-    float _previousLevelValue;
+    private float _currentHealthValue;
+    private float _previousHealthValue;
+    private float _currentLevelValue;
+    private float _previousLevelValue;
 
     void Awake()
     {

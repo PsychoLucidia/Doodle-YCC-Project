@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAnimation : BaseAnimation
 {
-    [SerializeField] EnemyMovement enemyMovement;
+    [SerializeField] private EnemyMovement enemyMovement;
     void OnEnable()
     {
         if (enemyMovement != null)

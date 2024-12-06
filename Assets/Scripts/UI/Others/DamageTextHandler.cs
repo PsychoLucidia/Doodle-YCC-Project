@@ -12,7 +12,7 @@ public class DamageTextHandler : MonoBehaviour
     public Color32 color;
     public DamageTextPool damageTextPool;
 
-    RectTransform _rectTransform;
+    private RectTransform _rectTransform;
 
     void Awake()
     {

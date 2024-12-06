@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerLifebar : BaseBarLogic
 {
     [Header("Private Components (Get on Awake)")]
-    [SerializeField] PlayerStat _playerStat;
+    [SerializeField] private PlayerStat _playerStat;
 
     [Header("Private Variables")]
-    [SerializeField] float _currentHealthValue;
+    [SerializeField] private float _currentHealthValue;
 
     void Awake()
     {
