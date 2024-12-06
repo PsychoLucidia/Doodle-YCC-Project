@@ -119,7 +119,7 @@ public class EnemyPool : BaseObjectPool
     /// <returns>The calculated additional health as an integer.</returns>
     int SetAdditionalHealth(int level)
     {
-        int baseHealth = (GameManager.Instance.difficultyLevel - 1) * 5;
+        int baseHealth = (GameManager.Instance.difficultyLevel - 1) * 6;
 
         float levelHealth = level * additionalHealthMultiplier;
 

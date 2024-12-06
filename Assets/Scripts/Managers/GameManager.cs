@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         IncrementPlayTime();
+        ChangeDifficultyLevel();
     }
 
     void IncrementPlayTime()

@@ -4566,6 +4566,10 @@ MonoBehaviour:
     tableChangeTime: 30
     spawnCount: 5
     spawnInterval: 6
+  - spawnIDTable: 0000000003000000
+    tableChangeTime: 30
+    spawnCount: 10
+    spawnInterval: 10
   spawnTableIncrement: 0
   enemyIDs: 
 --- !u!4 &1593038771
