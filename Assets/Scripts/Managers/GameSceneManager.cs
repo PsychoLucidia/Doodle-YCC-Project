@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     #region Button Functions
     /// <summary>
     /// List of button functions in the game.

@@ -22,6 +22,8 @@ public class PlayerInputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandlePauseMenu();
+
         if (GameManager.Instance.pauseState == PauseState.Paused) { return; }
 
         HandleMovement();
@@ -51,7 +53,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 GameManager.Instance.PauseGame(PauseState.Paused);
             }
-            else if (GameManager.Instance.pauseState == PauseState.Paused)
+            else if (GameManager.Instance.pauseState == PauseState.Paused && !GameManager.Instance.buffPanelOpen)
             {
                 GameManager.Instance.PauseGame(PauseState.Unpaused);
             }

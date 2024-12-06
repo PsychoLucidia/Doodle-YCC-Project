@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerStat : BaseStat
 {   
@@ -27,6 +28,7 @@ public class PlayerStat : BaseStat
     private float _previousSpeed = 0;
 
     private bool _gameStarted = false;
+    
 
     void Awake()
     {
@@ -57,6 +59,11 @@ public class PlayerStat : BaseStat
     public override void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (health <= 0)
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
     }
 
     void ValueTracker()

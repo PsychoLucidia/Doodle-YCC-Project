@@ -6,9 +6,13 @@ public class EnemyPool : BaseObjectPool
 {
     public float additionalHealthMultiplier = 0.15f;
 
+    public PlayerStat playerStat;
+
     private ParticleSpawner _particleSpawner;
     void Awake()
     {
+        playerStat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>();
+
         ComponentInitialization();
         Initialization();
     }
@@ -70,6 +74,7 @@ public class EnemyPool : BaseObjectPool
 
         obj.transform.position = spawnPosition;
 
+        stat.playerStat = playerStat;
         stat.enemyPool = this;
         stat.particleSpawner = _particleSpawner;
         stat.level = Mathf.RoundToInt(GameManager.Instance.difficultyLevel * 1.4f);
@@ -134,6 +139,7 @@ public class EnemyPool : BaseObjectPool
 
             obj.name = gameObject.name + i;
 
+            stat.playerStat = playerStat;
             stat.enemyPool = this;
             stat.particleSpawner = _particleSpawner;
 

@@ -6,6 +6,7 @@ public class BuffSelector : MonoBehaviour
 {
     [Header("Components")]
     public PlayerStat playerStat;
+    [SerializeField] private AudioSource _audioSource;
 
     [Header("Settings")]
     public int selectableCount = 3;
@@ -64,6 +65,7 @@ public class BuffSelector : MonoBehaviour
     void Start()
     {
         _buffUI.SetActive(false);
+
     }
 
     void OnEnable()
@@ -93,6 +95,7 @@ public class BuffSelector : MonoBehaviour
 
     void OpenBuffPanel(PauseState pauseState)
     {
+        GameManager.Instance.buffPanelOpen = true;
         GameManager.Instance.PauseGame(pauseState);
         _buffUI.SetActive(true);
         for (int i = 0; i < selectableCount; i++)
@@ -104,6 +107,9 @@ public class BuffSelector : MonoBehaviour
             handler.buffDescription.text = buffData.description;
             handler.buffImage.color = buffData.buffColor;
 
+            GameManager.Instance.buffPanelOpen = true;
+            _audioSource.Play();
+
             handler.applyBuffButton.onClick.RemoveAllListeners();
             handler.applyBuffButton.onClick.AddListener(handler.ApplyBuff);
             handler.applyBuffButton.onClick.AddListener(this.DeactivateBuffUI);
@@ -114,15 +120,16 @@ public class BuffSelector : MonoBehaviour
     {
         float chance = Random.Range(0f, 1f);
 
-        if (chance <= 0.5f) { return buffCommon[Random.Range(0, buffCommon.Length)]; }
-        else if (chance > 0.5f && chance <= 0.8f) { return buffUncommon[Random.Range(0, buffUncommon.Length)]; }
-        else if (chance > 0.8f) { return buffRare[Random.Range(0, buffRare.Length)]; }
+        if (chance <= 0.7f) { return buffCommon[Random.Range(0, buffCommon.Length)]; }
+        else if (chance > 0.7f && chance <= 0.9f) { return buffUncommon[Random.Range(0, buffUncommon.Length)]; }
+        else if (chance > 0.9f) { return buffRare[Random.Range(0, buffRare.Length)]; }
         return null;
     }
 
     public void DeactivateBuffUI()
     {
         _buffUI.SetActive(false);
+        GameManager.Instance.buffPanelOpen = false;
         GameManager.Instance.PauseGame(PauseState.Unpaused);
     }
 }

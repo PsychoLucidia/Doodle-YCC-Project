@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent UnityEventDiffChange;
 
     public static GameManager Instance;
+    public GameObject pauseMenu;
 
     [Header("Enums")]
     public PauseState pauseState;
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Time.timeScale = 1f;
+
         Initialization();
     }
 
@@ -47,6 +50,9 @@ public class GameManager : MonoBehaviour
     {
         playerStat = FindObjectOfType<PlayerStat>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
+
+        pauseMenu = GameObject.FindGameObjectWithTag("PausePanel");
+        pauseMenu.SetActive(false);
     }
 
     void Update()
@@ -76,16 +82,30 @@ public class GameManager : MonoBehaviour
     {
         if (_previousPauseState == pauseState) { return; }
 
-        _previousPauseState = pauseState;
-        
         if (pauseState == PauseState.Paused)
         {
             Time.timeScale = 0f;
+            
+            if (!buffPanelOpen)
+            {
+                pauseMenu.SetActive(true);
+            }
         }
         else
         {
             Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
         }
+        
+        this.pauseState = pauseState;
+        _previousPauseState = this.pauseState;
+    }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        pauseState = PauseState.Unpaused;
     }
 
     public void ChangeDifficultyLevel()

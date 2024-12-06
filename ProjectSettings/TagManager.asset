@@ -8,6 +8,7 @@ TagManager:
   - ParticleSpawner
   - EnemySpawner
   - SoundManager
+  - PausePanel
   layers:
   - Default
   - TransparentFX
