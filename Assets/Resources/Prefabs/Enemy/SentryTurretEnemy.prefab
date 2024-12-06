@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFlip: 1
-  enableSpriteRotation: 0
   animator: {fileID: 4039483879213461706}
   spriteRenderer: {fileID: 2197594216143988230}
   idleAnimationName: 
@@ -332,11 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 0
-  initialDamage: 0
+  initialHealth: 10
+  initialDamage: 5
   initialDefense: 0
-  initialSpeed: 0
-  initalExpDrop: 0
+  initialSpeed: 2
+  initalExpDrop: 6
   health: 2
   maxHealth: 2
   damage: 1
@@ -347,7 +346,7 @@ MonoBehaviour:
   additionalSpeed: 0
   level: 1
   maxLevel: 1
-  xpDrop: 0
+  xpDrop: 6
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
   _enemyMovement: {fileID: 0}
@@ -371,7 +370,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   hurtboxTransform: {fileID: 0}
   enemyMoveState: 0
-  _spriteTransform: {fileID: 0}
+  playerTransform: {fileID: 0}
 --- !u!114 &4224602980522449881
 MonoBehaviour:
   m_ObjectHideFlags: 0

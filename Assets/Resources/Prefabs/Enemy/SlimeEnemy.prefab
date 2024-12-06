@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d974bfacef7857e46a83df8cf65a05c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 2
+  initialHealth: 3
   initialDamage: 1
   initialDefense: 0
-  initialSpeed: 0
+  initialSpeed: 1.5
   initalExpDrop: 2
   health: 2
   maxHealth: 2
@@ -90,7 +90,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   hurtboxTransform: {fileID: 0}
   enemyMoveState: 0
-  _spriteTransform: {fileID: 0}
+  playerTransform: {fileID: 0}
 --- !u!114 &6396352516900898708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFlip: 1
-  enableSpriteRotation: 0
   animator: {fileID: 8215404210718784089}
   spriteRenderer: {fileID: 6385604644681977766}
   idleAnimationName: 
