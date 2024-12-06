@@ -274,12 +274,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableFlip: 1
+  enableSpriteRotation: 1
+  spriteRotationOffset: 0
   animator: {fileID: 7262298384570454527}
   spriteRenderer: {fileID: 5111258452341717615}
   idleAnimationName: 
   moveAnimationName: 
   attackAnimationName: 
-  enemyMovement: {fileID: 2116901436876294803}
 --- !u!1 &7542047731368432480
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +346,8 @@ MonoBehaviour:
   additionalHealth: 0
   additionalSpeed: 0
   level: 1
-  maxLevel: 1
-  xpDrop: 10
+  maxLevel: 200
+  xpDrop: 0
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
   _enemyMovement: {fileID: 0}
@@ -370,7 +371,7 @@ MonoBehaviour:
   characterController: {fileID: 0}
   hurtboxTransform: {fileID: 0}
   enemyMoveState: 0
-  playerTransform: {fileID: 0}
+  _spriteTransform: {fileID: 0}
 --- !u!114 &261618086560782677
 MonoBehaviour:
   m_ObjectHideFlags: 0
