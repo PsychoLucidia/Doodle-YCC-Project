@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyStat : BaseStat
 {
+    public UnityEvent OnEnemyHurt;
+
     [Header("EXP Drop")]
     public int xpDrop;
 
@@ -34,6 +38,8 @@ public class EnemyStat : BaseStat
     public override void TakeDamage(int damage)
     {
         health -= damage;
+
+        OnEnemyHurt?.Invoke();
 
         if (health <= 0)
         {

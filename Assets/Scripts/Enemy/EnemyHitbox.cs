@@ -39,6 +39,7 @@ public class EnemyHitbox : BaseHitbox
         {
             damageable.TakeDamage(_enemyStat.damage);
             _hitbox.enabled = false;
+            _hitboxTimer = _hitboxInactiveTime;
         }
     }
 }
