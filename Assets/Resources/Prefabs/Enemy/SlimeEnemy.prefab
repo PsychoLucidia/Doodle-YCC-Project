@@ -66,6 +66,9 @@ MonoBehaviour:
   additionalSpeed: 0
   level: 1
   maxLevel: 200
+  OnEnemyHurt:
+    m_PersistentCalls:
+      m_Calls: []
   xpDrop: 2
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
@@ -454,3 +457,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAttackDamage: 0
   _enemyStat: {fileID: 1083381804994775324}
+  _hitbox: {fileID: 6394873307083401923}
+  _hitboxInactiveTime: 0.5

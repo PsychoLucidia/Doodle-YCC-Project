@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7702443897756595595}
   - component: {fileID: 2648438426532471048}
+  - component: {fileID: 5187945503701413827}
   m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
@@ -67,6 +68,22 @@ CircleCollider2D:
   m_Offset: {x: 0.3110891, y: 0.0011320289}
   serializedVersion: 2
   m_Radius: 0.5822657
+--- !u!114 &5187945503701413827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363577834644331619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd629c725ce40445b91293e43a2d131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttackDamage: 0
+  _enemyStat: {fileID: 464669931184346711}
+  _hitbox: {fileID: 2648438426532471048}
+  _hitboxInactiveTime: 0.5
 --- !u!1 &3663748597627414526
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +365,9 @@ MonoBehaviour:
   additionalSpeed: 0
   level: 1
   maxLevel: 200
+  OnEnemyHurt:
+    m_PersistentCalls:
+      m_Calls: []
   xpDrop: 4
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}

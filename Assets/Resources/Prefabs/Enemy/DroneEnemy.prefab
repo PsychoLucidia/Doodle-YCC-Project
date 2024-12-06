@@ -343,7 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAttackDamage: 0
-  _enemyStat: {fileID: 0}
+  _enemyStat: {fileID: 9184881269672695852}
+  _hitbox: {fileID: 2883846688522575519}
   _hitboxInactiveTime: 0.5
 --- !u!1 &8763889867100648378
 GameObject:

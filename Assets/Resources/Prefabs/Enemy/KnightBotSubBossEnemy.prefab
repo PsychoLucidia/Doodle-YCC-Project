@@ -435,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7818295354971694830}
   - component: {fileID: 5320066355997325305}
+  - component: {fileID: 6776030979974444945}
   m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
@@ -492,3 +493,19 @@ CircleCollider2D:
   m_Offset: {x: 0.019436955, y: -0.06802952}
   serializedVersion: 2
   m_Radius: 0.65549576
+--- !u!114 &6776030979974444945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898290547669348269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd629c725ce40445b91293e43a2d131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttackDamage: 0
+  _enemyStat: {fileID: 8405754604279570283}
+  _hitbox: {fileID: 5320066355997325305}
+  _hitboxInactiveTime: 0.5
