@@ -27,6 +27,7 @@ public class EnemyHitbox : BaseHitbox
         if (damageable != null)
         {
             damageable.TakeDamage(_enemyStat.damage);
+            
         }
     }
 }
