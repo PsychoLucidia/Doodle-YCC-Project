@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c23b06bd19c5ab42a1d45091870c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStat: {fileID: 0}
+  enemyStat: {fileID: 8952241403835553364}
 --- !u!50 &6933948238613912654
 Rigidbody2D:
   serializedVersion: 4
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFlip: 1
   enableSpriteRotation: 1
-  spriteRotationOffset: 0
+  spriteRotationOffset: -90
   animator: {fileID: 7262298384570454527}
   spriteRenderer: {fileID: 5111258452341717615}
   idleAnimationName: 

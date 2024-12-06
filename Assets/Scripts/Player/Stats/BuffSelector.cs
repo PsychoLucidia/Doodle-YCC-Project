@@ -17,19 +17,29 @@ public class BuffSelector : MonoBehaviour
 
     [Header("Buff Selector UI")]
     [SerializeField] private GameObject _buffUICanvas;
+    [SerializeField] private GameObject _buffUI;
+
+
 
 
 
 
     void Awake()
     {
+        ObjectsInitialization();
+    }
+
+    void ObjectsInitialization()
+    {
         _buffUICanvas = GameObject.FindGameObjectWithTag("BuffUI");
+
+        _buffUI = _buffUICanvas.transform.Find("BuffUI").gameObject;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _buffUICanvas.SetActive(false);
+        _buffUI.SetActive(false);
     }
 
     // Update is called once per frame

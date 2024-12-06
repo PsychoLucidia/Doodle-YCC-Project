@@ -8,4 +8,8 @@ public class BuffData : ScriptableObject
     public int attack;
     public int restoreHealthAmount;
     public float speed;
+
+    [Header("Description")]
+    public string buffName;
+    public string description;
 }

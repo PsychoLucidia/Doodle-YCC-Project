@@ -16,10 +16,10 @@ public class EnemySpawner : MonoBehaviour
 
     public int[] enemyIDs;
 
-    float _timer = 0f;
-    float _spawnTableTimer = 0f;
+    private float _timer = 0f;
+    private float _spawnTableTimer = 0f;
 
-    PlayerStat playerStat;
+    private PlayerStat playerStat;
 
     void Awake()
     {
