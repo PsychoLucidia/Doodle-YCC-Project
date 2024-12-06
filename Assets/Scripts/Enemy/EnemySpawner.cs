@@ -72,6 +72,28 @@ public class EnemySpawner : BaseSpawner
 
     }
 
+    public void CallSpawnEnemy(int index)
+    {
+        Vector2 screenMin = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        Vector2 screenMax = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        Vector3 spawnPos = Vector3.zero;
+
+
+            int randomSides = Random.Range(0, 3);
+
+            switch (randomSides)
+            {
+                case 0: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMax.y + spawnOffset, 0); break; // Top
+                case 1: spawnPos = new Vector3(Random.Range(screenMin.x, screenMax.x), screenMin.y - spawnOffset, 0); break; // Bottom
+                case 2: spawnPos = new Vector3(screenMax.x + spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Left
+                case 3: spawnPos = new Vector3(screenMin.x - spawnOffset, Random.Range(screenMin.y, screenMax.y), 0); break; // Right
+                default: break; // Error
+            }
+
+            objectPools[enemyIDs[index]].ActivateObject(SetEnemyLevel(), spawnPos);
+    }
+
     /// <summary>
     /// Tracks and updates the current spawn table based on elapsed time.
     /// Increments the spawnTableIncrement index when the _spawnTableTimer exceeds

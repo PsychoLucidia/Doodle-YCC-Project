@@ -5,28 +5,34 @@ using UnityEngine;
 public class SpriteParticleHandler : MonoBehaviour
 {   
     private Coroutine _playCoroutine;
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
     public SpriteParticlePool spriteParticlePool;
     
-    void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
+    public float _time;
+    
     public void PlayAnimation()
     {
-        if (_playCoroutine == null)
+        _playCoroutine = StartCoroutine(PlaySequence());
+    }
+
+    void Update()
+    {
+        if (_time > 0)
         {
-            _playCoroutine = StartCoroutine(PlaySequence());
+            _time -= Time.deltaTime;
+        }
+        else
+        {
+            spriteParticlePool.DeactivateObject(this.gameObject);
         }
     }
 
     IEnumerator PlaySequence()
     {
-        _animator.Play("Poof");
+        _animator.Play("PoofAnimation");
         
+        _time = _animator.GetCurrentAnimatorStateInfo(0).length + 0.2f;
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         _playCoroutine = null;
-        spriteParticlePool.DeactivateObject(this.gameObject);
     }
 }

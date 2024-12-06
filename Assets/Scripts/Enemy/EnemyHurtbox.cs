@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
 {
     public EnemyStat enemyStat;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     DamageTextPool _damageTextPool;
 
     // Start is called before the first frame update
@@ -34,6 +35,10 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
             if (enemyStat != null)
             {
                 enemyStat.TakeDamage(CalculateDamage(damage));
+                if (enemyStat.health > 0)
+                {
+                    StartCoroutine(AnimateHurt());
+                }
             }
         }
         else
@@ -65,5 +70,12 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
     public void SetPlayerStat(PlayerStat thisPlayerStat)
     {
         enemyStat.playerStat = thisPlayerStat;
+    }
+
+    IEnumerator AnimateHurt()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        _spriteRenderer.color = Color.white;
     }
 }

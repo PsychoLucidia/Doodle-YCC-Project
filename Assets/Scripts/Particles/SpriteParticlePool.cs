@@ -35,6 +35,7 @@ public class SpriteParticlePool : BaseObjectPool
 
                 obj.transform.position = spawnPosition;
                 handler.spriteParticlePool = this;
+                obj.SetActive(true);
                 handler.PlayAnimation();
 
                 activeObjects.Add(obj);

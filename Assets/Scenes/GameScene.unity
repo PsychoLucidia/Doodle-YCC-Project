@@ -1746,6 +1746,7 @@ GameObject:
   - component: {fileID: 702047190}
   - component: {fileID: 702047192}
   - component: {fileID: 702047191}
+  - component: {fileID: 702047193}
   m_Layer: 7
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -1830,6 +1831,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &702047193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702047189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d358137a3ff974b41bf36bd2ee2b676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStat: {fileID: 0}
 --- !u!1 &702464886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,10 +5226,6 @@ PrefabInstance:
     - target: {fileID: 6798264528881288773, guid: c30621da0548ab448aedc06206680787, type: 3}
       propertyPath: m_Name
       value: PoofParticle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6798264528881288773, guid: c30621da0548ab448aedc06206680787, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

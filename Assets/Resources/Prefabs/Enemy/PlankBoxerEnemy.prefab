@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStat: {fileID: 1777150569444668652}
+  _spriteRenderer: {fileID: 9011142178817742926}
 --- !u!50 &8142085328400827010
 Rigidbody2D:
   serializedVersion: 4
@@ -350,6 +351,8 @@ MonoBehaviour:
   xpDrop: 10
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
+  particleSpawner: {fileID: 0}
+  particleID: 0
   _enemyMovement: {fileID: 0}
 --- !u!114 &2458796357095604713
 MonoBehaviour:

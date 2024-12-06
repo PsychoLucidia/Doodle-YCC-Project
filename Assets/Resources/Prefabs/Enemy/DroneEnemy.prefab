@@ -69,6 +69,8 @@ MonoBehaviour:
   xpDrop: 4
   playerStat: {fileID: 0}
   enemyPool: {fileID: 0}
+  particleSpawner: {fileID: 0}
+  particleID: 0
   _enemyMovement: {fileID: 0}
 --- !u!114 &153777300196967086
 MonoBehaviour:
@@ -270,6 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5426928404760574836}
   - component: {fileID: 2883846688522575519}
+  - component: {fileID: 3669889744254110785}
   m_Layer: 9
   m_Name: Hitbox
   m_TagString: Untagged
@@ -327,6 +330,21 @@ CircleCollider2D:
   m_Offset: {x: 0.019436955, y: -0.06802952}
   serializedVersion: 2
   m_Radius: 0.65549576
+--- !u!114 &3669889744254110785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5529844300352534185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd629c725ce40445b91293e43a2d131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttackDamage: 0
+  _enemyStat: {fileID: 0}
+  _hitboxInactiveTime: 0.5
 --- !u!1 &8763889867100648378
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStat: {fileID: 9184881269672695852}
+  _spriteRenderer: {fileID: 5101792744235079929}
 --- !u!50 &1880338443704919935
 Rigidbody2D:
   serializedVersion: 4

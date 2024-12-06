@@ -79,6 +79,16 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public void ChangeDifficultyLevel()
+    {
+        if (playTime > 300f)
+        {
+            playTime = 0f;            
+            difficultyLevel++;
+            OnDifficultyLevelChanged?.Invoke(difficultyLevel);
+        }
+    }
 }
 
 public enum PauseState

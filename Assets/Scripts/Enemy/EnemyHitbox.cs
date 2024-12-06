@@ -6,6 +6,9 @@ public class EnemyHitbox : BaseHitbox
 {
     [SerializeField] private EnemyStat _enemyStat;
 
+    [Header("Hitbox Settings")]
+    [SerializeField] private float _hitboxInactiveTime = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
