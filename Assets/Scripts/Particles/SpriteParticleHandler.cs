@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class SpriteParticleHandler : MonoBehaviour
 {   
-    private Coroutine playCoroutine;
-    private Animator animator;
-    private 
+    private Coroutine _playCoroutine;
+    private Animator _animator;
+    public SpriteParticlePool spriteParticlePool;
     
-    void PlayAnimation()
+    void Awake()
     {
-        if (playCoroutine == null)
+        _animator = GetComponent<Animator>();
+    }
+
+    public void PlayAnimation()
+    {
+        if (_playCoroutine == null)
         {
-            playCoroutine = StartCoroutine(PlaySequence());
+            _playCoroutine = StartCoroutine(PlaySequence());
         }
     }
 
     IEnumerator PlaySequence()
     {
-        animator.Play("Poof");
-        yield return new WaitForSeconds(animator.GetNextAnimatorStateInfo(0).length);
+        _animator.Play("Poof");
+        
+        yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+        _playCoroutine = null;
+        spriteParticlePool.DeactivateObject(this.gameObject);
     }
 }

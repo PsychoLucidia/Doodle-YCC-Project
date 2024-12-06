@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : BaseSpawner
 {
     public float spawnOffset = 1f;
 
@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnInterval;
 
     public SpawnTable[] spawnTable;
-    public BaseObjectPool[] objectPools;
 
     public int spawnTableIncrement = 0;
 

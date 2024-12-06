@@ -5,8 +5,11 @@ using UnityEngine;
 public class EnemyPool : BaseObjectPool
 {
     public float additionalHealthMultiplier = 0.15f;
+
+    private ParticleSpawner _particleSpawner;
     void Awake()
     {
+        ComponentInitialization();
         Initialization();
     }
 
@@ -67,6 +70,7 @@ public class EnemyPool : BaseObjectPool
         obj.transform.position = spawnPosition;
 
         stat.enemyPool = this;
+        stat.particleSpawner = _particleSpawner;
         stat.level = Mathf.RoundToInt(GameManager.Instance.difficultyLevel * 1.4f);
         stat.speed = stat.initialSpeed + SetSpeedMultiplier(level);
         stat.maxHealth = stat.initialHealth + SetAdditionalHealth(level);
@@ -114,7 +118,7 @@ public class EnemyPool : BaseObjectPool
     
     void Initialization()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = Instantiate(objectPrefab, transform.position, Quaternion.identity, transform);
             EnemyStat stat = obj.GetComponent<EnemyStat>();
@@ -122,9 +126,15 @@ public class EnemyPool : BaseObjectPool
             obj.name = gameObject.name + i;
 
             stat.enemyPool = this;
+            stat.particleSpawner = _particleSpawner;
 
             obj.SetActive(false);
             inactiveObjects.Add(obj);
         }
+    }
+
+    void ComponentInitialization()
+    {
+        _particleSpawner = GameObject.FindGameObjectWithTag("ParticleSpawner").GetComponent<ParticleSpawner>();
     }
 }

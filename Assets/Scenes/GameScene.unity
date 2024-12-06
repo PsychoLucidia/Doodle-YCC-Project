@@ -2430,9 +2430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeObjects: []
   inactiveObjects: []
-  poolSize: 10
+  poolSize: 1
   limitToPoolSize: 0
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 6798264528881288773, guid: c30621da0548ab448aedc06206680787, type: 3}
 --- !u!1 &997974310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,7 +3400,7 @@ GameObject:
   - component: {fileID: 1593038770}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3417,6 +3417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd1434a51cb1bb40a2ef024cb0d42b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPools: []
   spawnOffset: 3
   spawnCount: 0
   spawnInterval: 0
@@ -3433,7 +3434,6 @@ MonoBehaviour:
     tableChangeTime: 30
     spawnCount: 5
     spawnInterval: 6
-  objectPools: []
   spawnTableIncrement: 0
   enemyIDs: 
 --- !u!4 &1593038771
@@ -3452,11 +3452,11 @@ Transform:
   - {fileID: 1900714429}
   - {fileID: 695609955}
   - {fileID: 1908504839}
-  - {fileID: 411573291}
-  - {fileID: 287903945}
   - {fileID: 2069752148}
   - {fileID: 1440190188}
   - {fileID: 1885286114}
+  - {fileID: 287903945}
+  - {fileID: 411573291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668627660
@@ -3858,9 +3858,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882976402}
+  - component: {fileID: 1882976403}
   m_Layer: 0
   m_Name: Particles
-  m_TagString: Untagged
+  m_TagString: ParticleSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3874,13 +3875,26 @@ Transform:
   m_GameObject: {fileID: 1882976401}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3843.9326, y: 477.77463, z: -23.000166}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 974203761}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882976403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882976401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a832f183049d60548942652f408b7927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPools: []
 --- !u!1 &1885286113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,18 +5170,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5350771954552669912, guid: c30621da0548ab448aedc06206680787, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350771954552669912, guid: c30621da0548ab448aedc06206680787, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350771954552669912, guid: c30621da0548ab448aedc06206680787, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5350771954552669912, guid: c30621da0548ab448aedc06206680787, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5207,13 +5209,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5350771954552669912, guid: c30621da0548ab448aedc06206680787, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6798264528881288773, guid: c30621da0548ab448aedc06206680787, type: 3}
       propertyPath: m_Name
       value: PoofParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798264528881288773, guid: c30621da0548ab448aedc06206680787, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

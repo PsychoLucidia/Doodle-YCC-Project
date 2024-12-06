@@ -10,6 +10,8 @@ public class EnemyStat : BaseStat
 
     public PlayerStat playerStat;
     public EnemyPool enemyPool;
+    public ParticleSpawner particleSpawner;
+    public int particleID;
     [SerializeField] private EnemyMovement _enemyMovement;
 
     void Awake()
@@ -42,6 +44,7 @@ public class EnemyStat : BaseStat
     void Die()
     {
         playerStat.currentExp += xpDrop;
+        particleSpawner.Spawn(particleID, this.transform.position);
         enemyPool.DeactivateObject(this.gameObject);
     }
 

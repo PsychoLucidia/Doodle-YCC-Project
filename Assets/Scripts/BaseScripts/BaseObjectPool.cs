@@ -34,10 +34,18 @@ public abstract class BaseObjectPool : MonoBehaviour
     {
     }
 
+    public virtual void ActivateObject(Vector3 spawnPosition)
+    {
+    }
+
     public virtual void DeactivateObject(GameObject textObj, GameObject anchorObj)
     {
     }
 
+    /// <summary>
+    /// Deactivates an enemy object and moves it to inactive lists.
+    /// </summary>
+    /// <param name="enemyObj">The enemy object to deactivate.</param>
     public virtual void DeactivateObject(GameObject enemyObj) 
     {
         enemyObj.SetActive(false);
