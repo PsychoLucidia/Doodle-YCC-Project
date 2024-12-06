@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mainmenu BTNs_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 415
+        width: 333
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cebdfb27e181204b9e862b15dc591c3
+      internalID: 665457517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_5
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 420
+        width: 343
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dad1b612c071de469012466242b2a18
+      internalID: 1246736982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_8
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 426
+        width: 353
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374fe94eaf656bd46a1fd96a66dc2efb
+      internalID: 324159173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_9
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 416
+        width: 336
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c96ef6dcfda15b44a618630f51a05f1
+      internalID: -174738336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_10
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 418
+        width: 343
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf11c82f59c5894184eb3f97bbdbc93
+      internalID: -704038007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_12
+      rect:
+        serializedVersion: 2
+        x: 3629
+        y: 416
+        width: 336
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a2aed29093bb7419cb83d5d3930be1
+      internalID: -1597520958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_15
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 215
+        width: 337
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc4daed4d0d5f94abbf85d83bb2f1d3
+      internalID: 1838906146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_18
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 213
+        width: 341
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256b08aac98d4ab44811a83915525703
+      internalID: -683088093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_19
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 200
+        width: 347
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448e8836f8b9b8f4387fe1e6441e7c2e
+      internalID: 994464456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_21
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 212
+        width: 342
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fe54833fe4cab4c8bc23fb923f5c7c
+      internalID: -1593298601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_23
+      rect:
+        serializedVersion: 2
+        x: 2943
+        y: 194
+        width: 339
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48a70bfad30af34ab0ad8ee7e95b5e8
+      internalID: -1493521708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mainmenu BTNs_24
+      rect:
+        serializedVersion: 2
+        x: 3635
+        y: 204
+        width: 337
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7687de9e8c141e4a990c74a49ef0bd4
+      internalID: -1757808849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +371,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mainmenu BTNs_0: -449232845
+      Mainmenu BTNs_1: 665457517
+      Mainmenu BTNs_10: -704038007
+      Mainmenu BTNs_11: 504164319
+      Mainmenu BTNs_12: -1597520958
+      Mainmenu BTNs_13: 531062365
+      Mainmenu BTNs_14: -621526579
+      Mainmenu BTNs_15: 1838906146
+      Mainmenu BTNs_16: -2104354506
+      Mainmenu BTNs_17: 1861306283
+      Mainmenu BTNs_18: -683088093
+      Mainmenu BTNs_19: 994464456
+      Mainmenu BTNs_2: -464819802
+      Mainmenu BTNs_20: 1475202789
+      Mainmenu BTNs_21: -1593298601
+      Mainmenu BTNs_22: -129546555
+      Mainmenu BTNs_23: -1493521708
+      Mainmenu BTNs_24: -1757808849
+      Mainmenu BTNs_25: 1825108999
+      Mainmenu BTNs_26: -1949318523
+      Mainmenu BTNs_27: -1011614236
+      Mainmenu BTNs_3: 1385845079
+      Mainmenu BTNs_4: -662605279
+      Mainmenu BTNs_5: 1246736982
+      Mainmenu BTNs_6: 1429044729
+      Mainmenu BTNs_7: -1116377987
+      Mainmenu BTNs_8: 324159173
+      Mainmenu BTNs_9: -174738336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
