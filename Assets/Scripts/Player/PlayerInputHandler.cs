@@ -22,6 +22,8 @@ public class PlayerInputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.pauseState == PauseState.Paused) { return; }
+
         HandleMovement();
         HandleAttack();
     }
@@ -36,12 +38,23 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (playerAttackHandler.playerAttackState == PlayerAttackState.Attacking) { return; }
             playerAttackHandler.PlayerAttack();
         }
     }
 
     void HandlePauseMenu()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameManager.Instance.pauseState == PauseState.Unpaused && !GameManager.Instance.buffPanelOpen)
+            {
+                GameManager.Instance.PauseGame(PauseState.Paused);
+            }
+            else if (GameManager.Instance.pauseState == PauseState.Paused)
+            {
+                GameManager.Instance.PauseGame(PauseState.Unpaused);
+            }
+        }
     }
 }

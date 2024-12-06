@@ -17,5 +17,8 @@ MonoBehaviour:
   attack: 3
   restoreHealthAmount: 0
   speed: 0
+  buffColor:
+    serializedVersion: 2
+    rgba: 4281897446
   buffName: Shar-Pen II
   description: +3 Atk

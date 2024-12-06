@@ -17,6 +17,7 @@ public class EnemySpawner : BaseSpawner
 
     private float _timer = 0f;
     private float _spawnTableTimer = 0f;
+    private float _spawnTimer = 0f;
 
     private PlayerStat playerStat;
 
@@ -130,6 +131,7 @@ public class EnemySpawner : BaseSpawner
     {
         _timer += Time.deltaTime;
         _spawnTableTimer += Time.deltaTime;
+        _spawnTimer += Time.deltaTime;
 
         if (_timer > spawnInterval)
         {

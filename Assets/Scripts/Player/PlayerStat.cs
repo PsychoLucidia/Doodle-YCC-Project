@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class PlayerStat : BaseStat
 {   
-    [Header("Events")]
-    public UnityEvent OnLevelUp;
+    public event Action<PauseState> OnLevelUp;
+    public UnityEvent UnityOnLevelUp;
 
     [Header("Components")]
     public PlayerAttackHandler playerAttackHandler;
@@ -24,6 +24,7 @@ public class PlayerStat : BaseStat
 
     private int _previousDamage = 0;
     private int _previousHealth = 0;
+    private float _previousSpeed = 0;
 
     private bool _gameStarted = false;
 
@@ -62,6 +63,7 @@ public class PlayerStat : BaseStat
     {
         CheckDamage();
         CheckHealth();
+        CheckSpeed();
         CheckExperience();
     }
 
@@ -95,7 +97,8 @@ public class PlayerStat : BaseStat
             level++;
             currentExp -= expToNextLevel;
             expToNextLevel = RecalculateExperience();
-            OnLevelUp.Invoke();
+            OnLevelUp?.Invoke(PauseState.Paused);
+            UnityOnLevelUp?.Invoke();
         }
     }
 
@@ -163,6 +166,22 @@ public class PlayerStat : BaseStat
         }
     }
 
+    void CheckSpeed()
+    {
+        float newSpeed = RecalculateSpeed();
+        if (_previousSpeed != newSpeed)
+        {
+            speed = newSpeed;
+
+            _previousSpeed = newSpeed;
+        }
+
+        if (playerMovementCC.entitySpeed != speed)
+        {
+            playerMovementCC.entitySpeed = speed;
+        }
+    }
+
     /// <summary>
     /// Recalculates the total damage based on the player's current
     /// weapon and additional damage.
@@ -186,5 +205,10 @@ public class PlayerStat : BaseStat
     int RecalculateHealth()
     {
         return initialHealth + additionalHealth;
+    }
+
+    float RecalculateSpeed()
+    {
+        return initialSpeed + additionalSpeed;
     }
 }

@@ -17,5 +17,8 @@ MonoBehaviour:
   attack: 0
   restoreHealthAmount: 8
   speed: 0
+  buffColor:
+    serializedVersion: 2
+    rgba: 4286432403
   buffName: Recolor II
   description: +8 Hp

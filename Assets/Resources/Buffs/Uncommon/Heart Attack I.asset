@@ -17,5 +17,8 @@ MonoBehaviour:
   attack: 1
   restoreHealthAmount: 1
   speed: 0
+  buffColor:
+    serializedVersion: 2
+    rgba: 4286432403
   buffName: Heart Attack I
   description: +1 Atk +1 Hp

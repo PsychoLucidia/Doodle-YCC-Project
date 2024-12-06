@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public float playTime;
     public float totalPlayTime;
+
+    public bool buffPanelOpen;
     
     public int difficultyLevel;
 

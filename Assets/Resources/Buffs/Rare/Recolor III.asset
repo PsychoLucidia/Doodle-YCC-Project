@@ -17,5 +17,8 @@ MonoBehaviour:
   attack: 0
   restoreHealthAmount: 20
   speed: 0
+  buffColor:
+    serializedVersion: 2
+    rgba: 4281897446
   buffName: Recolor III
   description: +20 Hp

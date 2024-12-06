@@ -17,5 +17,8 @@ MonoBehaviour:
   attack: 0
   restoreHealthAmount: 0
   speed: 0.6
+  buffColor:
+    serializedVersion: 2
+    rgba: 4286432403
   buffName: Speedpaint II
   description: +0.6 Spd
