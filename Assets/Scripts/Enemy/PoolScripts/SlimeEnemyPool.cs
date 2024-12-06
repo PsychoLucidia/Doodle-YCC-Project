@@ -85,7 +85,7 @@ public class EnemyPool : BaseObjectPool
     float SetSpeedMultiplier(int level)
     {
         // Base speed is derived from the game's difficulty level.
-        int baseSpeed = GameManager.Instance.difficultyLevel;
+        int baseSpeed = GameManager.Instance.difficultyLevel - 1;
 
         // Calculate speed increment based on player level.
         float levelSpeed = level * 0.01f;

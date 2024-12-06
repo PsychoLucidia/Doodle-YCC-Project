@@ -35,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnCount = spawnTable[0].spawnCount;
         spawnInterval = spawnTable[0].spawnInterval;
+        enemyIDs = spawnTable[0].spawnIDTable;
 
         SpawnEnemy();
     }
@@ -57,7 +58,6 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < spawnCount; i++)
         {
             int randomSides = Random.Range(0, 3);
-            enemyIDs = spawnTable[0].spawnIDTable;
 
             switch (randomSides)
             {
@@ -95,9 +95,9 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 // Update enemy IDs, spawn count, and interval from the new table
-                enemyIDs = spawnTable[spawnTableIncrement].spawnIDTable;
                 spawnCount = spawnTable[spawnTableIncrement].spawnCount;
                 spawnInterval = spawnTable[spawnTableIncrement].spawnInterval;
+                enemyIDs = spawnTable[spawnTableIncrement].spawnIDTable;
             }
 
             // Reset the spawn table timer

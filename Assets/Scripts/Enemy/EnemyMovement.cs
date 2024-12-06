@@ -7,6 +7,7 @@ public class EnemyMovement : BaseMovement
 {
     #region Events
 
+    public Action<float> OnEnemyRotationChange;
     public Action<float> OnEnemyRawRotationChange;
 
     #endregion
@@ -45,13 +46,12 @@ public class EnemyMovement : BaseMovement
     {
         base.MoveLogic();
 
-        _spriteTransform.rotation = Quaternion.Euler(0f, 0f, smoothAngle);
-
         if (moveDirection.magnitude > 0.1f)
         {
             enemyMoveState = EnemyMoveState.Moving;
 
             OnEnemyRawRotationChange?.Invoke(targetAngle);
+            OnEnemyRotationChange?.Invoke(smoothAngle);
         }
         else
         {

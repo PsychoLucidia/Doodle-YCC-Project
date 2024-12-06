@@ -26,7 +26,7 @@ public class EnemyStat : BaseStat
     // Update is called once per frame
     void Update()
     {
-        
+        SetSpeed();
     }
 
     public override void TakeDamage(int damage)
@@ -48,5 +48,16 @@ public class EnemyStat : BaseStat
     void StatCalculation()
     {
         
+    }
+
+    void SetSpeed()
+    {
+        if (_enemyMovement != null)
+        {
+            if (_enemyMovement.entitySpeed != speed)
+            {
+                _enemyMovement.entitySpeed = speed;
+            }
+        }
     }
 }

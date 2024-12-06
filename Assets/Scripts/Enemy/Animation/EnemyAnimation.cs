@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class EnemyAnimation : BaseAnimation
 {
-    [SerializeField] private EnemyMovement enemyMovement;
+    private EnemyMovement _enemyMovement;
+
     void OnEnable()
     {
-        if (enemyMovement != null)
+        if (_enemyMovement == null)
         {
-            enemyMovement.OnEnemyRawRotationChange += FlipSprite;
+            _enemyMovement = GetComponentInParent<EnemyMovement>();
+        }
+
+        if (_enemyMovement != null)
+        {
+            _enemyMovement.OnEnemyRawRotationChange += FlipSprite;
+            _enemyMovement.OnEnemyRawRotationChange += RotateSprite;
+
             Debug.Log("OnEnable");
         }
     }
 
     void OnDisable()
     {
-        if (enemyMovement != null)
-        {
-            enemyMovement.OnEnemyRawRotationChange -= FlipSprite;
-        }
+        _enemyMovement.OnEnemyRawRotationChange -= FlipSprite;
+        _enemyMovement.OnEnemyRawRotationChange -= RotateSprite;
     }
 }

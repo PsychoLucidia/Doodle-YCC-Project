@@ -31,7 +31,10 @@ public class EnemyHurtbox : BaseHurtbox, IDamageable, ICollectEXP
         {
             _damageTextPool.ActivateObject
                 (new Color32(255, 0, 0, 255), this.transform.parent, Camera.main.WorldToScreenPoint(this.transform.position), damage);
-            enemyStat.TakeDamage(CalculateDamage(damage));
+            if (enemyStat != null)
+            {
+                enemyStat.TakeDamage(CalculateDamage(damage));
+            }
         }
         else
         {

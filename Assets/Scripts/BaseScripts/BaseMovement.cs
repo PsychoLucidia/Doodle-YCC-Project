@@ -9,7 +9,7 @@ public abstract class BaseMovement : MonoBehaviour
     public float vertical;
 
     [Header("Base Stat Settings")]
-    [SerializeField] protected float entitySpeed = 5f;
+    public float entitySpeed = 5f;
 
     [Header("Direction")]
     public Vector3 entityDirection;
