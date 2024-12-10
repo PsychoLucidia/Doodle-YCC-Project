@@ -31,7 +31,7 @@ public class SpriteParticleHandler : MonoBehaviour
     {
         _animator.Play("PoofAnimation");
         
-        _time = _animator.GetCurrentAnimatorStateInfo(0).length + 0.2f;
+        _time = _animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
         _playCoroutine = null;
     }

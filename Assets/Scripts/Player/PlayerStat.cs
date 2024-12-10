@@ -28,7 +28,9 @@ public class PlayerStat : BaseStat
     private float _previousSpeed = 0;
 
     private bool _gameStarted = false;
-    
+
+    [Header("Booleans")]
+    public bool isDead = false;
 
     void Awake()
     {
